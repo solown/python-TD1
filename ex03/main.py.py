@@ -11,22 +11,21 @@ def comparaison_mot():
         lenght1=len(mot1)
         lenght2=len(mot2)
         if lenght1>lenght2:
-            max=int(lenght1) + 1
+            max=int(lenght2)-1
         else:
-            max=int(lenght2) + 1
+            max=int(lenght1) -1
         print(max)
-        while((trouver == "FALSE") and (i < max)):
+        while trouver == bool("FALSE") and int(i)<int(max):
             print(i)
-            if(mot1[i] < mot2[i]):
-                trouver = "TRUE"
+            if(ord(mot1[i]) > ord(mot2[i])):
+                trouver = bool("TRUE")
                 resultat = mot2
-            elif(mot2[i] < mot1[i]):
-                trouver = "TRUE"
+            elif(ord(mot2[i]) > ord(mot1[i])):
+                trouver = bool("TRUE")
                 resultat = mot1
-            else:
-                i+=i
-        print(mot1)
-        print(mot2)
+
+            i+=1
+
         return resultat
 
 res=comparaison_mot()
