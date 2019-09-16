@@ -1,0 +1,9 @@
+Moodle --> Id 2523
+
+-TP
+- Dépôt == attention consiges + dépôt
+
+1) Toutes les entrées légales doivent obtenir un output sans erreur.
+2) Toutes les entrées illégales --> Exception
+
+En python3
