@@ -9,18 +9,19 @@ class TooMuchArgs(Exception):
 
 def squareCalculator(floatNum):
     try:
-        floatNum=float(floatNum)
-        if floatNum < 0.0:
-            raise NegativeFloatExcept
-        else :
-            squareFloatNum=m.sqrt(floatNum)
-            return squareFloatNum
+        if floatNum.isdigit():
+            return False
+        else:
+            floatNum=float(floatNum)
+            if floatNum < 0.0:
+                raise NegativeFloatExcept
+            else:
+                squareFloatNum=m.sqrt(floatNum)
+                return squareFloatNum
     except ValueError:
         print("BAD INPUT for " + str(floatNum))
-        return False
     except NegativeFloatExcept:
         print("BAD INPUT for " +str(floatNum))
-        return False
 
 def main(line):
     try:
