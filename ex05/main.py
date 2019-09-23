@@ -1,11 +1,12 @@
 import os
 import sys
-
+class TooMuchArgs(Exception):
+    pass
 
 def count():
     for x in range(0,15,3):
         print(x)
-    return 0
+    return ""
 
 def main(line):
     try:

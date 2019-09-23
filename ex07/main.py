@@ -4,7 +4,8 @@ class TooMuchArgs(Exception):
     pass
 class borneError(Exception):
     pass
-
+class FonctionError(Exception):
+    """ Fonction name don't right"""
 def maFonction(x): ###Create your custom function here
 
     if(isinstance(x,int)!=True):
@@ -19,8 +20,9 @@ def tabuler(fonction,borneInf,borneSup,nbPas):
     borneInf=int(borneInf)
     borneSup=int(borneSup)
     nbPas=int(nbPas)
-    dispatcher{"maFonction" : maFonction}
-    if (isinstance(borneInf,int)!=True or isinstance(borneSup,int)!=True or isinstance(nbPas,int)!=True or isinstance(fonction,str)!=True):
+    if (fonction != "Mafonction"):
+        raise FonctionError
+    elif (isinstance(borneInf,int)!=True or isinstance(borneSup,int)!=True or isinstance(nbPas,int)!=True or isinstance(fonction,str)!=True):
         raise ValueError
     elif (borneInf > borneSup):
         raise borneError
@@ -28,7 +30,7 @@ def tabuler(fonction,borneInf,borneSup,nbPas):
         h=int((borneSup - borneInf)/float(nbPas))
         i=borneInf
         while i <= borneSup:
-            y=fonction(i)
+            y=eval(fonction)(i)
             print("x = ",i,"y = ", y)
             i+=h
         resultat=i
@@ -49,7 +51,7 @@ def main(line):
             try:
                 result=tabuler(f,borneInf,borneSup,nbPas) ####Change function name and args
             except FonctionError:
-                print("Not the good fonction name her: maFonction")
+                print("Not the good fonction name her: maFonction and not ",f)
                 result="BAD INPUT"
             except ValueError:
                 print("Just a Value error \n")
@@ -58,7 +60,7 @@ def main(line):
                 print("You can't / by 0")
                 result="BAD INPUT"
             except borneError:
-                print("The borne is illogical")
+                print("The borneInf can't be taller than borneSup")
                 result="BAD INPUT"
 
 
