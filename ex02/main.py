@@ -6,23 +6,20 @@ class NegativeFloatExcept(Exception):
     """Exception for negative float in input"""
 class TooMuchArgs(Exception):
     """Exception for too much args"""
+class BadTypeinFile(Exception):
+    """Exception for string in INPUT.TXT"""
 
 def squareCalculator(floatNum):
-    try:
-        if floatNum.isdigit():
-            return False
-        else:
-            floatNum=float(floatNum)
-            if floatNum < 0.0:
+    if floatNum.isdigit():
+        #raise BadTypeinFile
+        return
+    else:
+        floatNum=float(floatNum)
+        if floatNum < 0.0:
                 raise NegativeFloatExcept
-            else:
-                squareFloatNum=m.sqrt(floatNum)
-                return squareFloatNum
-    except ValueError:
-        print("BAD INPUT for " + str(floatNum))
-    except NegativeFloatExcept:
-        print("BAD INPUT for " +str(floatNum))
-
+        else:
+            squareFloatNum=m.sqrt(floatNum)
+            return squareFloatNum
 def main(line):
     try:
         if len(line.split(";"))>1:
@@ -36,6 +33,15 @@ def main(line):
                 print(result)
     except TooMuchArgs:
         print("BAD INPUT - Too much args for this programme")
+    except ValueError:
+        print("BAD INPUT for " + str(floatNum))
+    except NegativeFloatExcept:
+        print("BAD INPUT for " +str(floatNum))
+    except ValueError:
+        print("BAD INPUT")
+    """ except BadTypeinFile:
+        print("BAD INPUT")"""
+
 
 if __name__=="__main__":
     try:

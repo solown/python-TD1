@@ -6,18 +6,20 @@ class TestNumberMethods(unittest.TestCase):
         self.assertFalse(squareCalculator("")"""
   
     def testStringException(self):
-        """with self.assertRaises(ValueError):
-            main.squareCalculator("string")"""
-        self.assertIsNone(main.squareCalculator("string"))
+        with self.assertRaises(ValueError):
+            main.squareCalculator("string")
+        #self.assertIsNone(main.squareCalculator("string"))
 
     def testNegativeIntException(self):
-        self.assertIsNone(main.squareCalculator("-10.2"))
-        """ with self.assertRaises(main.NegativeFloatExcept):
-            main.squareCalculator(-10.2)"""
+        #self.assertIsNone(main.squareCalculator("-10.2"))
+        with self.assertRaises(main.NegativeFloatExcept):
+            main.squareCalculator("-10.2")
 
     def testBadInputWithInt(self):
-        self.assertFalse(main.squareCalculator("10"))
-
+       #self.assertFalse(main.squareCalculator("10")) 
+        with self.assertRaises(main.BadTypeinFile):
+            main.squareCalculator("10")
+    
     def testSquareEquality(self):
         testNumber="25.7"
         expectedResult = math.sqrt(float(testNumber))
