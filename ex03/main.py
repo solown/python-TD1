@@ -4,26 +4,28 @@ import sys
 
 class NoInputDetected(Exception):
     """no input was detected"""
-
+    pass
 class NothingToCompare(Exception):
     """the two string is equal"""
-
+    pass
+class NotAStringError(Exception):
+    pass
 
 def comparaison_mot(mot1,mot2):
-
-
-    if(mot1=="" or mot2==""):
+    print(str(mot1) == str(mot2))
+    if(mot1=="" or mot2=="" ):
         raise NoInputDetected
-    if(mot1.lower() == mot2.lower()):
+    elif(  mot1 == mot2):
         raise NothingToCompare
-    mot1l=mot1.lower()
-    mot2l=mot2.lower()
-    i=int(0)
-    trouver=False
-    lenght1=len(mot1)
-    lenght2=len(mot2)
-    try:
-
+    elif(isinstance(mot1,str)==False or isinstance(mot2,str)==False):
+        raise NotAStringError
+    else:
+        mot1l=mot1.lower()
+        mot2l=mot2.lower()
+        i=int(0)
+        trouver=False
+        lenght1=len(mot1)
+        lenght2=len(mot2)
         if lenght1>lenght2:
             max=int(lenght2)
         else:
@@ -37,16 +39,9 @@ def comparaison_mot(mot1,mot2):
                 trouver = bool(True)
                 resultat = str(mot2)
             i+=1
-    except ValueError:
-        resultat="BAD INPUT"
-    except NoInputDetected:
-        print("Error: NoInputDetected\n *****comparaison_mot***** \n")
-        resultat="BAD INPUT"
-    except NothingToCompare:
-        print("It's the same string")
 
 
-    return resultat
+        return resultat
 
 
 
@@ -55,11 +50,23 @@ def main(line):
         if len(line.split(";"))>2: ###Change number of args need on one line
             raise TooMuchArgs
         else:
-            var=line
+            var=line.replace("\n","")
             var=var.split(";")
-            mot1=var[0]
-            mot2=var[1]
-            result=comparaison_mot(mot1,mot2) ####Change function name and args
+            mot1=str(var[0])
+            mot2=str(var[1])
+            try:
+                result=comparaison_mot(mot1,mot2) ####Change function name and args
+            except ValueError:
+                result="BAD INPUT just a value error"
+            except NotAStringError:
+                result="BAD INPUT It's not a String"
+            except NothingToCompare:
+                print("It's the same string")
+                result="BAD INPUT"
+            except NoInputDetected:
+                print("Error: NoInputDetected\n *****comparaison_mot***** \n")
+                result="BAD INPUT"
+
             if result == None:
                 return
             else:

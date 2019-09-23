@@ -1,7 +1,8 @@
 import os
 import sys
 
-
+class NegativeInput(Exception):
+    pass
 
 
 def calcul_vitesse(temps, distance):
@@ -19,18 +20,18 @@ def calcul_vitesse(temps, distance):
         Si division par 0: BAD INPUT
         Si entrée autre que float: BAD INPUT
     """
-    try:
+    if (float(temps) == 0):
+        raise ZeroDivisionError
+    elif (isinstance(float(temps),float) ==False or isinstance(float(distance),float)==False):
+        raise ValueError
+    elif((float(temps) < 0) or (float(distance) < 0)):
+        raise NegativeInput
+    else:
         temps=float(temps)
         distance=float(distance)
         vitesse=round(distance/temps,1)
 
-    except ZeroDivisionError:
-        print("Can't divide by 0:\n ex01.py \n ")
-        vitesse = "BAD INPUT"
-    except ValueError:
 
-        print("Somthing wrong with what you put in... \n ex01.py \n")
-        vitesse="BAD INPUT"
 
     return vitesse
 
@@ -45,8 +46,19 @@ def main(line):
             var=var.split(";")
             temps=var[0]
             distance=var[1]
+            try:
 
-            result=calcul_vitesse(temps,distance) ####Change function name and args
+
+                result=calcul_vitesse(temps,distance) ####Change function name and args
+            except ZeroDivisionError:
+                print("Can't divide by 0:\n ex01.py \n ")
+                result = "BAD INPUT"
+            except NegativeInput:
+                print("Negative Input detected")
+                result="BAD INPUT"
+            except ValueError:
+                print("Somthing wrong with what you put in... \n ex01.py \n")
+                result="BAD INPUT"
             if result == None:
                 return
             else:
