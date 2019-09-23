@@ -23,9 +23,10 @@ def tabuler(fonction,borneInf,borneSup,nbPas):
             print("x = ",i,"y = ", y)
             i+=h
         resultat=i
-
+    except ZeroDivisionError:
+        resultat="BAD INPUT"
     except borneError:
-        resultat="Bas INPUT"
+        resultat="BAD INPUT"
 
 def main(line):
     try:
