@@ -9,14 +9,14 @@ def count():
 
 def main(line):
     try:
-        if len(line.split(";"))>1: ###Change number of args need on one line
+        if len(line.split(";"))>0: ###Change number of args need on one line
             raise TooMuchArgs
         else:
             var=line
             result=count() ####Change function name and args
             if result == None:
                 return
-        
+
     except TooMuchArgs:
         print("BAD INPUT - Too much args for this programme")
 

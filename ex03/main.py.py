@@ -24,14 +24,15 @@ def comparaison_mot():
             max=int(lenght2)
         else:
             max=int(lenght1)
-        while trouver == bool(False) and int(i)<int(max):
-        
+        while trouver == bool(False):
+
             if(ord(mot1l[i]) <= ord(mot2l[i]) ):
                 trouver = bool(True)
                 resultat = str(mot1)
             elif(ord(mot1l[i]) >= ord(mot2l[i]) ):
                 trouver = bool(True)
                 resultat = str(mot2)
+            
             i+=1
     except ValueError:
         resultat="BAD INPUT"
