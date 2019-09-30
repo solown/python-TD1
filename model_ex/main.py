@@ -4,6 +4,7 @@ import sys
 
 def fcnt1(arg1,arg2,...): ###Create your custom function here
 
+
 def main(line):
     try:
         if len(line.split(";"))>1: ###Change number of args need on one line
@@ -27,4 +28,3 @@ if __name__=="__main__":
             print("FILE NOT FOUND "+sys.argv[1] )
     except IndexError:
             print("BAD USAGE --> USAGE : python3 main.py inputfile")
-
