@@ -33,7 +33,7 @@ def main():
 
     result=fonction_liste() ####Change function name and args
     if result == None:
-            return
+        return
     else:
         print(result)
 
