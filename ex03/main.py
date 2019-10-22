@@ -12,7 +12,7 @@ class NotAStringError(Exception):
     pass
 
 def comparaison_mot(mot1,mot2):
-    print(str(mot1) == str(mot2))
+    
     if(mot1=="" or mot2=="" ):
         raise NoInputDetected
     elif(  mot1 == mot2):

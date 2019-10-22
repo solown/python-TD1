@@ -6,6 +6,7 @@ class borneError(Exception):
     pass
 class FonctionError(Exception):
     """ Fonction name don't right"""
+    pass
 def maFonction(x): ###Create your custom function here
 
     if(isinstance(x,int)!=True):
