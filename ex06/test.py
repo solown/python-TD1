@@ -6,7 +6,6 @@ class TestNumberMethods(unittest.TestCase):
         with self.assertRaises(ValueError):
             main.volumeSphere("string")
 
-
     def testNegativeSquare(self):
         with self.assertRaises(main.NegativeOrNullSquareInput):
             main.volumeSphere("-12")

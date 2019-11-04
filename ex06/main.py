@@ -6,7 +6,7 @@ class NegativeOrNullSquareInput(Exception):
     """Negative Volume is not allowed"""
 class TooMuchArgs(Exception):
     """Too much args in line of input file"""
-class NullSquareInput(Exception):
+#class NullSquareInput(Exception):
     """The square in input is equal to ZERO"""
 
 def cubeCalculator(radius): ###Create your custom function here
@@ -33,7 +33,7 @@ def main(line):
                 print(result)
     except TooMuchArgs:
         print("BAD INPUT - Too much args for this programme")
-    except NegativeSquareOrNullInput:
+    except NegativeOrNullSquareInput:
         print("BAD INPUT - Negative square in input")
     except ValueError:
         print("BAD INPUT - String has been found")
