@@ -1,6 +1,8 @@
 import os
 import sys
-
+class NoInputNeeded(Exception):
+    """No need input"""
+    pass
 
 def fonction_liste(): ###Create your custom function here
     liste=[17,38,10,25,72]
@@ -38,4 +40,11 @@ def main():
         print(result)
 
 if __name__=="__main__":
-    main()
+    try:
+        if (sys.argv[1] != ""):
+            raise NoInputNeeded
+    except NoInputNeeded:
+        print("you don't have to say anything")
+        result="BAD INPUT"
+    except IndexError:
+        main()
