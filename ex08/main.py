@@ -16,17 +16,19 @@ class TooMuchArgs(Exception):
     """Too much args in line of input file"""
 
 def tchacatchac(trainSpeed,dist): ###Create your custom function here
-    trainSpeed = int(trainSpeed)
-    if trainSpeed <=0:
-        raise NegativeInput
-    stationDist = dist
     departure_hour=9
-    crash_time=(stationDist/trainSpeed)*60
-    death_hour=(crash_hour//60)+departure_hour
-    death_minute = round(crash_hour%60)
-    return death_hour+"h" + death_minute
+    crash_time=(dist/trainSpeed)*60
+    death_hour=int((crash_time//60))+departure_hour
+    death_minute = round(crash_time%60)
+    if death_minute < 10:
+        return str(death_hour)+"h0" + str(death_minute)
+    else :
+        return str(death_hour)+"h"+str(death_minute)
 
 def deathHourList(dist,minSpeed,maxSpeed,step):
+    dist,minSpeed,maxSpeed,step = int(dist),int(minSpeed),int(maxSpeed),int(step)
+    if dist<=0 or minSpeed<=0 or maxSpeed<=0 or step<=0:
+        raise NegativeInput
     tab_string = "   {}(en km/h)   |   {}   "
     print(tab_string.format("Vitesse","Heure"))
     for i in range(minSpeed,maxSpeed,step):
