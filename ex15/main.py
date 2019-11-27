@@ -37,9 +37,9 @@ def main(line):
 
                 print(str(b.x) + "," + str(b.y))
             except NotANumberError:
-                print ("It's not a number in input")
+                print ("BAD INPUT")
     except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+        print("BAD INPUT")
 
 
 if __name__ == "__main__":
