@@ -1,14 +1,23 @@
 import os
 import sys
 
-"""Je suis ligoté sur les rails en gare d’Arras. Écrire un programme qui affiche un
-tableau me permettant de connaître l’heure à laquelle je serai déchiqueté par le train parti
-de la gare du Nord à 9h (il y a 170 km entre la gare du Nord et Arras). Le tableau prédira
-les différentes heures possibles pour toutes les vitesses de 100 km/h à 300 km/h, par pas
-de 10 km/h, les résultats étant arrondis à la minute inférieure.
-Écrire une procédure tchacatchac qui reçoit la vitesse du train et qui affiche l’heure du
+
+"""Je suis ligoté sur les rails en gare d’Arras.
+Écrire un programme qui affiche un
+tableau me permettant de connaître l’heure à
+laquelle je serai déchiqueté par le train parti
+de la gare du Nord à 9h (il y a 170 km entre la
+gare du Nord et Arras). Le tableau prédira
+les différentes heures possibles pour toutes les
+vitesses de 100 km/h à 300 km/h, par pas
+de 10 km/h, les résultats étant arrondis à la
+minute inférieure.
+Écrire une procédure tchacatchac qui reçoit la
+vitesse du train et qui affiche l’heure du
 drame.
-Écrire le programme principal qui affiche le tableau demandé."""
+Écrire le programme principal qui affiche le tableau
+demandé."""
+
 
 class NegativeInput(Exception):
     """Negative Integer in input is not allowed"""
@@ -59,13 +68,13 @@ def main(line):
     except WrongTrainSpeed:
         print("BAD INPUT - Check max speed and min speed")
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     try:
-        inputFile=open(sys.argv[1],"r")
+        inputFile = open(sys.argv[1], "r")
         for line in inputFile:
             main(line)
     except IOError:
-            print("FILE NOT FOUND "+sys.argv[1] )
+            print("FILE NOT FOUND " + sys.argv[1])
     except IndexError:
             print("BAD USAGE --> USAGE : python3 main.py inputfile")
-
