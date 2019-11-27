@@ -16,7 +16,6 @@ class TestNumberMethods(unittest.TestCase):
             main.squareCalculator("-10.2")
 
     def testBadInputWithInt(self):
-       #self.assertFalse(main.squareCalculator("10")) 
         with self.assertRaises(main.BadTypeinFile):
             main.squareCalculator("10")
     

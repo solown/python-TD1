@@ -12,52 +12,47 @@ drame.
 
 class NegativeInput(Exception):
     """Negative Integer in input is not allowed"""
-class InvalidArgsInput(Exception):
+class TooMuchArgs(Exception):
     """Too much args in line of input file"""
-class WrongTrainSpeed(Exception):
-    """Min train speed is above max train speed or conversely"""
 
 def tchacatchac(trainSpeed,dist): ###Create your custom function here
-    departureHour=9
-    crashTime=(dist/trainSpeed)*60
-    deathHour=int((crashTime//60))+departureHour
-    deathMinute = round(crashTime%60)
-    if deathMinute < 10:
-        return str(deathHour)+"h0" + str(deathMinute)
+    departure_hour=9
+    crash_time=(dist/trainSpeed)*60
+    death_hour=int((crash_time//60))+departure_hour
+    death_minute = round(crash_time%60)
+    if death_minute < 10:
+        return str(death_hour)+"h0" + str(death_minute)
     else :
-        return str(deathHour)+"h"+str(deathMinute)
+        return str(death_hour)+"h"+str(death_minute)
 
 def deathHourList(dist,minSpeed,maxSpeed,step):
     dist,minSpeed,maxSpeed,step = int(dist),int(minSpeed),int(maxSpeed),int(step)
-    if dist<0 or minSpeed<0 or maxSpeed<0 or step<0:
+    if dist<=0 or minSpeed<=0 or maxSpeed<=0 or step<=0:
         raise NegativeInput
-    if maxSpeed<minSpeed:
-        raise WrongTrainSpeed
-    tabString = "{} km/h -> {} "
+    tab_string = "{} km/h -> {} "
+    #print(tab_string.format("Vitesse","Heure"))
     for i in range(minSpeed,maxSpeed,step):
-        print(tabString.format(i,tchacatchac(i,dist)))
+        print(tab_string.format(i,tchacatchac(i,dist)))
 
 def main(line):
     try:
-        line=line.replace("\n","")
-        if line=="NONE":
-            result=deathHourList(170,100,300,10) ####Change function name and args
+        if len(line.split(";"))!=4:###Change number of args need on one line
+            raise TooMuchArgs
+        else:
+            dist,minSpeed,maxSpeed,step = line.split(";")
+            result=deathHourList(dist,minSpeed,maxSpeed,step) ####Change function name and args
             if result == None:
                 return
             else:
                 print(result)
-        else:
-            raise InvalidArgsInput
-    except InvalidArgsInput:
+    except TooMuchArgs:
         print("BAD INPUT - Too much args for this programme")
     except ZeroDivisionError:
         print("BAD INPUT - Zero in a division has been found")
     except ValueError:
         print("BAD INPUT - Float or string detected")
     except NegativeInput:
-        print("BAD INPUT - Negative input")
-    except WrongTrainSpeed:
-        print("BAD INPUT - Check max speed and min speed")
+        print("BAD INPUT - Negative train speed")
 
 if __name__=="__main__":
     try:

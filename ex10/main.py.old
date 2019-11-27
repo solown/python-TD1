@@ -3,7 +3,7 @@ import sys
 
 class UnvalidListException(Exception):
     """Exception to throw an error when the list contains items out of [0:]"""
-class InvalidArgsInput(Exception):
+class TooMuchArgs(Exception):
     """EXception to throw an error when there is bad args number in input"""
     
 def validateList(myList): ###Create your custom function here
@@ -22,17 +22,16 @@ def listAdding(myList):
     return myList        
 def main(line):
     try:
-        line=line.replace("\n","")
-        if line=="NONE":
-            myList = [0,4,3,1,2,4,3,1]
-            result=listAdding(myList) ####Change function name and args
+        if len(line.split(";"))<2: ###Change number of args need on one line
+            raise TooMuchArgs
+        else:
+            var=line.split(";")
+            result=listAdding(var) ###Change function name and args
             if result == None:
                 return
             else:
                 print(result)
-        else:
-            raise InvalidArgsInput
-    except InvalidArgsInput:
+    except TooMuchArgs:
         print("BAD INPUT - You didn't respect the needed args for this program")
     except UnvalidListException:
         print("BAD INPUT - Your list doesn't contain only number between 0 and 5")

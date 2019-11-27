@@ -1,7 +1,7 @@
 import os
 import sys
 
-class TooMuchArgs(Exception):
+class InvalidArgsInput(Exception):
     """Raise too much args exception"""
 
 class InvalidSetsType(Exception):
@@ -13,7 +13,6 @@ def setsOperation(sets1,sets2): ###Create your custom function here
     for item in setsSums:
         if type(item) is not str or len(item)>1:
             raise InvalidSetsType
-    print(sets1,sets2)
     if "c" in sets1:
         out1="True"
     else :
@@ -31,19 +30,36 @@ def setsOperation(sets1,sets2): ###Create your custom function here
             setsUnion.append(item)
         if (item in sets1 and item not in sets2) or (item in sets2 and item not in sets1):
             setsInter.append(item)
-    return out1,out2,setsSub1,setsSub2,setsUnion, setsInter
+    sets1Str = "X : "+formatOutput(sets1)
+    sets2Str = "Y : "+formatOutput(sets2)
+    out1Str = "c in X : " + str(out1)
+    out2Str =  "a in Y : " + str(out2)
+    setsSub1Str = "X - Y : " + formatOutput(setsSub1)
+    setsSub2Str = "Y - X : " + formatOutput(setsSub2)
+    setsUnionStr = "X union Y : " + formatOutput(setsUnion)
+    setsInterStr = "X inter Y : " + formatOutput(setsInter)
+    return out1Str,out2Str,setsSub1Str,setsSub2Str,setsUnionStr, setsInterStr
+
+def formatOutput(sets):
+    setsStr = str(sets).replace("[","{")
+    setsStr=setsStr.replace("]","}")
+    return setsStr
 
 def main(line):
     try:
-        var=line.split(";")
-        if len(var)>2: ###Change number of args need on one line
-            raise TooMuchArgs
-        else:
-            var[1]=var[1].replace("\n","")
-            setsX,setsY = var[0].split(","),var[1].split(",")
+        line=line.replace("\n","")
+        if line=="NONE":
+            setsX = ["a","b","c","d"]
+            setsY = ["s","b","d"]
             result=setsOperation(setsX,setsY) ####Change function name and args
-            print(result)
-    except TooMuchArgs:
+            if result == None:
+                return
+            else:
+                for item in result:
+                    print(item)
+        else:
+            raise InvalidArgsInput
+    except InvalidArgsInput:
         print("BAD INPUT - Too much args for this programme")
     except InvalidSetsType:
         print("BAD INPUT - Invalid type in sets ")

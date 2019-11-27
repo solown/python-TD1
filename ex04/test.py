@@ -19,16 +19,16 @@ class TestNumberMethods(unittest.TestCase):
             main.pressureChecker("7.6","-4.8")
 
     def testLowerPressure(self):
-        self.assertEqual(main.pressureChecker("2.6","5.6"),"Diminuer la pression")
+        self.assertEqual(main.pressureChecker("2.6","5.6"),"Augmenter")
 
     def testLowerVolume(self):
-        self.assertEqual(main.pressureChecker("2.25","7.501"),"Diminuer le volume")
+        self.assertEqual(main.pressureChecker("2.25","7.501"),"Diminuer")
 
     def testStopNow(self):
-        self.assertEqual(main.pressureChecker("2.34","7.501"),"Arrêt immédiat")
+        self.assertEqual(main.pressureChecker("2.34","7.501"),"KO")
 
     def testIsOkay(self):
-        self.assertEqual(main.pressureChecker("2.25","5.601"),"Tout va bien :)")
+        self.assertEqual(main.pressureChecker("2.25","5.601"),"OK")
                 
 
 if __name__=="__main__":
