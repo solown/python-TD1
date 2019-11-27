@@ -17,8 +17,7 @@ class BadTypeinFile(Exception):
 
 def squareCalculator(floatNum):
     if floatNum.isdigit():
-        #raise BadTypeinFile
-        return
+        raise BadTypeinFile
     else:
         floatNum = float(floatNum)
         if floatNum < 0.0:
@@ -44,12 +43,9 @@ def main(line):
     except ValueError:
         print("BAD INPUT for " + str(floatNum))
     except NegativeFloatExcept:
-        print("BAD INPUT for " + str(floatNum))
-    except ValueError:
-        print("BAD INPUT")
-    """ except BadTypeinFile:
-        print("BAD INPUT")"""
-
+        print("BAD INPUT for " +str(floatNum))
+    except BadTypeinFile:
+        print("BAD INPUT for "+ str(floatNum))
 
 if __name__ == "__main__":
     try:

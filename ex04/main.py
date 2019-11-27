@@ -24,13 +24,13 @@ def pressureChecker(pressure, volume):
     if volume < 0.0:
         raise NegativeVolumeInput
     if pressure > pSeuil and volume > vSeuil:
-        return "Arrêt immédiat"
+        return "KO"
     elif pressure > pSeuil:
-        return "Diminuer la pression"
+        return "Augmenter"
     elif volume > vSeuil:
-        return "Diminuer le volume"
+        return "Diminuer"
     else:
-        return "Tout va bien :)"
+        return "OK"
 
 
 def main(line):
