@@ -15,8 +15,8 @@ class TestNumberMethods(unittest.TestCase):
 
 
     def testafficheFctnTrue(self):
-         instTest = main.maClasse()
-         self.assertEqual(instTest.affiche(), (23, 28, 42))
+        instTest = main.maClasse()
+        self.assertEqual(instTest.affiche(), (23, 28, 42))
 
 
     def testafficheFctnFalse(self):

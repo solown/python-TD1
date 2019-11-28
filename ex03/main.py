@@ -44,8 +44,6 @@ def comparaison_mot(mot1, mot2):
                 trouver = bool(True)
                 resultat = str(mot2)
             i += 1
-
-
         return resultat
 
 

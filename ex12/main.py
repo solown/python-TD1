@@ -31,33 +31,35 @@ def setsOperation(sets1, sets2):
             setsSub2.append(item)
         if item in sets1 and item in sets2:
             setsUnion.append(item)
-        if ((item in sets1 and item not in sets2)
-        or (item in sets2 and item not in sets1)):
+        if ((item in sets1 and item not in sets2) or
+                (item in sets2 and item not in sets1)):
             setsInter.append(item)
     sets1Str = "X : "+formatOutput(sets1)
     sets2Str = "Y : "+formatOutput(sets2)
     out1Str = "c in X : " + str(out1)
-    out2Str =  "a in Y : " + str(out2)
+    out2Str = "a in Y : " + str(out2)
     setsSub1Str = "X - Y : " + formatOutput(setsSub1)
     setsSub2Str = "Y - X : " + formatOutput(setsSub2)
     setsUnionStr = "X union Y : " + formatOutput(setsUnion)
     setsInterStr = "X inter Y : " + formatOutput(setsInter)
     return (out1Str, out2Str, setsSub1Str, setsSub2Str,
-    setsUnionStr, setsInterStr)
+            setsUnionStr, setsInterStr)
+
 
 def formatOutput(sets):
-    setsStr = str(sets).replace("[","{")
-    setsStr=setsStr.replace("]","}")
+    setsStr = str(sets).replace("[", "{")
+    setsStr = setsStr.replace("]", "}")
     return setsStr
+
 
 def main(line):
     try:
-        line=line.replace("\n","")
-        if line=="NONE":
-            setsX = ["a","b","c","d"]
-            setsY = ["s","b","d"]
-            result=setsOperation(setsX,setsY) ####Change function name and args
-            if result == None:
+        line = line.replace("\n", "")
+        if line == "NONE":
+            setsX = ["a", "b", "c", "d"]
+            setsY = ["s", "b", "d"]
+            result = setsOperation(setsX, setsY)
+            if result is None:
                 return
             else:
                 for item in result:

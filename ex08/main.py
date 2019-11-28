@@ -21,37 +21,45 @@ demandé."""
 
 class NegativeInput(Exception):
     """Negative Integer in input is not allowed"""
+
+
 class InvalidArgsInput(Exception):
     """Too much args in line of input file"""
+
+
 class WrongTrainSpeed(Exception):
     """Min train speed is above max train speed or conversely"""
 
-def tchacatchac(trainSpeed,dist): ###Create your custom function here
-    departureHour=9
-    crashTime=(dist/trainSpeed)*60
-    deathHour=int((crashTime//60))+departureHour
-    deathMinute = round(crashTime%60)
-    if deathMinute < 10:
-        return str(deathHour)+"h0" + str(deathMinute)
-    else :
-        return str(deathHour)+"h"+str(deathMinute)
 
-def deathHourList(dist,minSpeed,maxSpeed,step):
-    dist,minSpeed,maxSpeed,step = int(dist),int(minSpeed),int(maxSpeed),int(step)
-    if dist<0 or minSpeed<0 or maxSpeed<0 or step<0:
+def tchacatchac(trainSpeed, dist):
+    departureHour = 9
+    crashTime = (dist / trainSpeed) * 60
+    deathHour = int((crashTime // 60)) + departureHour
+    deathMinute = round(crashTime % 60)
+    if deathMinute < 10:
+        return str(deathHour) + "h0" + str(deathMinute)
+    else:
+        return str(deathHour) + "h" + str(deathMinute)
+
+
+def deathHourList(dist, minSpeed, maxSpeed, step):
+    dist, minSpeed = int(dist), int(minSpeed)
+    maxSpeed, step = int(maxSpeed), int(step)
+    if dist < 0 or minSpeed < 0 or maxSpeed < 0 or step < 0:
         raise NegativeInput
-    if maxSpeed<minSpeed:
+    if maxSpeed < minSpeed:
         raise WrongTrainSpeed
     tabString = "{} km/h -> {} "
-    for i in range(minSpeed,maxSpeed,step):
-        print(tabString.format(i,tchacatchac(i,dist)))
+    for i in range(minSpeed, maxSpeed, step):
+        print(tabString.format(i, tchacatchac(i, dist)))
+
 
 def main(line):
     try:
-        line=line.replace("\n","")
-        if line=="NONE":
-            result=deathHourList(170,100,300,10) ####Change function name and args
-            if result == None:
+        line = line.replace("\n", "")
+        if line == "NONE":
+            result = deathHourList(170, 100, 300, 10)
+            if result is None:
                 return
             else:
                 print(result)

@@ -4,6 +4,8 @@ import sys
 
 class UnvalidListException(Exception):
     """Exception to throw an error when the list contains items out of [0:]"""
+
+
 class InvalidArgsInput(Exception):
     """EXception to throw an error when there is bad args number in input"""
 
@@ -27,18 +29,18 @@ def listAdding(myList):
 
 def main(line):
     try:
-        line=line.replace("\n","")
-        if line=="NONE":
-            myList = [0,4,3,1,2,4,3,1]
-            result=listAdding(myList) ####Change function name and args
-            if result == None:
+        line = line.replace("\n", "")
+        if line == "NONE":
+            myList = [0, 4, 3, 1, 2, 4, 3, 1]
+            result = listAdding(myList)
+            if result is None:
                 return
             else:
                 print(result)
         else:
             raise InvalidArgsInput
     except InvalidArgsInput:
-        print("BAD INPUT \ 
+        print("BAD INPUT \
                 You didn't respect the needed args for this program")
     except UnvalidListException:
         print("BAD INPUT")

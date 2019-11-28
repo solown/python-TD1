@@ -28,7 +28,6 @@ def testsetsOperationTrue(self):
                          "X inter Y : {'a', 'c', 's'}")
 
 
-
 def testsetsOperationFalse(self):
         sets1, sets2 = ['a', 'b', 'c', 't'], ['s', 'b', 'd']
         self.assertEqual(main.setsOperation(sets1, sets2)[0], "c in X : True")

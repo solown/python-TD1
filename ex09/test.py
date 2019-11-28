@@ -8,5 +8,5 @@ class TestNumberMethods(unittest.TestCase):
             main("String")
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     unittest.main()

@@ -13,21 +13,21 @@ class InvalidArgsInput(Exception):
 class maClasse():
     x = 23
     y = x + 5
-    
+
     def __init__(self):
         self.z = 42
 
     def affiche(self):
-        return(self.x,self.y,self.z)
+        return(self.x, self.y, self.z)
 
 
 def main(line):
     try:
-        line = line.replace("\n","")
-        if line == "NONE": 
-            myObj = maClasse() ####Change function name and args
-            result =  myObj.affiche()
-            if result == None:
+        line = line.replace("\n", "")
+        if line == "NONE":
+            myObj = maClasse()
+            result = myObj.affiche()
+            if result is None:
                 return
             else:
                 print(result)
@@ -36,7 +36,7 @@ def main(line):
             raise InvalidArgsInput
     except InvalidArgsInput:
         print("BAD INPUT - Too much args for this programme")
-    except (ValueError,TypeError) as e:
+    except (ValueError, TypeError) as e:
         print("BAD INPUT - Waiting for integers, got a string")
 
 
