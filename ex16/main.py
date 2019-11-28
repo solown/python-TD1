@@ -27,7 +27,7 @@ class Vecteur2D:
 
     def vectorSum(self, vect2):
         xSum = self.x + vect2.x
-        ySum = self.x + vect2.y
+        ySum = self.y + vect2.y
         return Vecteur2D(xSum, ySum)
 
     def getX(self):
