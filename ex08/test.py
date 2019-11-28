@@ -39,7 +39,8 @@ class TestNumberMethods(unittest.TestCase):
         testCrashTime = (testDist/testTrainSpeed) * 60
         testDeathHour = int(testCrashTime // 60) + departure
         testDeathMinute = round(testCrashTime % 60)
-        self.assertEqual(main.tchacatchac(250, 170), str(testDeathHour) + "h" + str(testDeathMinute))
+        self.assertEqual(main.tchacatchac(250, 170),
+        str(testDeathHour) + "h" + str(testDeathMinute))
 
 
     def testTchacatchaFalse(self):
@@ -50,7 +51,8 @@ class TestNumberMethods(unittest.TestCase):
         testCrashTime = (testDist/testTrainSpeed) * 60
         testDeathHour = int(testCrashTime // 60) + departure
         testDeathMinute = round(testCrashTime % 60)
-        self.assertNotEqual(main.tchacatchac(230, 190),str(testDeathHour) + "h" + str(testDeathMinute))
+        self.assertNotEqual(main.tchacatchac(230, 190), str(testDeathHour)
+         + "h" + str(testDeathMinute))
 
 
 if __name__ == "__main__":
