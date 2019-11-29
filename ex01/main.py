@@ -37,30 +37,25 @@ def calcul_vitesse(temps, distance):
 
 def main(line):
     try:
-        if len(line.split(";")) > 2:
+        if len(line.split(";")) != 2:
             raise TooMuchArgs
         else:
             var = line
             var = var.split(";")
             temps = var[0]
             distance = var[1]
-            try:
-                result = calcul_vitesse(temps, distance)
-            except ZeroDivisionError:
-                print("Can't divide by 0:\n ex01.py \n ")
-                result = "BAD INPUT"
-            except NegativeInput:
-                print("Negative Input detected")
-                result = "BAD INPUT"
-            except ValueError:
-                print("Somthing wrong with what you put in... \n ex01.py \n")
-                result = "BAD INPUT"
-            if result is None:
-                return
-            else:
-                print(result)
     except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
+    try:
+        result = calcul_vitesse(temps, distance)
+        print(result)
+    except ZeroDivisionError:
+        print("Bad Input")
+    except NegativeInput:
+        print("Bad Input")
+    except ValueError:
+        print("Bad Input")
+    
 
 if __name__ == "__main__":
     try:

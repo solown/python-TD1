@@ -56,25 +56,19 @@ def main(line):
             var = var.split(";")
             mot1 = str(var[0])
             mot2 = str(var[1])
-            try:
-                result = comparaison_mot(mot1, mot2)
-            except ValueError:
-                result = "BAD INPUT just a value error"
-            except NotAStringError:
-                result = "BAD INPUT It's not a String"
-            except NothingToCompare:
-                print("It's the same string")
-                result = "BAD INPUT"
-            except NoInputDetected:
-                print("Error: NoInputDetected\n *****comparaison_mot***** \n")
-                result = "BAD INPUT"
-
-            if result is None:
-                return
-            else:
-                print(result)
     except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
+    try:
+        result = comparaison_mot(mot1, mot2)
+        print(result)
+    except ValueError:
+        print("Bad Input")
+    except NotAStringError:
+        print("Bad Input")
+    except NothingToCompare:
+        print("Bad Input")
+    except NoInputDetected:
+        print("Bad Input")
 
 if __name__ == "__main__":
     try:
