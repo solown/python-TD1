@@ -13,11 +13,18 @@ class NothingToCompare(Exception):
 
 
 class NotAStringError(Exception):
+    """Not a string in input"""
     pass
 
 
 def comparaison_mot(mot1, mot2):
 
+    """
+        INPUT: 2 String
+        OUTPUT: 1 String
+        RESUME: Show the biggest between the two
+                you put in input
+    """
     if(mot1 == "" or mot2 == ""):
         raise NoInputDetected
     elif(mot1 == mot2):

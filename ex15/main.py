@@ -3,14 +3,27 @@ import sys
 
 
 class TooMuchArgs(Exception):
+    """ Trop d'argument en entrée"""
     pass
 
 
 class NotANumberError(Exception):
+    """not a number in input"""
     pass
 
 
 class Vecteur2D:
+    """
+        class Vecteur:
+
+            __init__:
+                INPUT : int or None
+                OUTPUT : an object of the class
+                         Vecteur 2D
+                RESUME: contructeur de la classe
+                        Avec comme valeur par
+                        defaut: (self,0,0)    
+    """
     def __init__(self, x=0, y=0):
         if (x != 0 and y != 0):
             if (x.isdigit() and y.isdigit()):

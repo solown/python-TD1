@@ -3,6 +3,11 @@ import sys
 
 
 def compteMots(chaine):
+    """
+        INPUT : str
+        OUTPUT : dict
+        RESUME : compte le nombre de mots
+    """
     if (type(chaine) is str):
         dic = {}
         liste = chaine.split()

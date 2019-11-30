@@ -3,10 +3,12 @@ import sys
 
 
 class TooMuchArgs(Exception):
+    """ You put too much input """
     pass
 
 
-class borneError(Exception):
+class BorneError(Exception):
+    """Biger born lower than the lower one"""
     pass
 
 
@@ -16,15 +18,28 @@ class FonctionError(Exception):
 
 
 def maFonction(x):
+    """
+        INPUT: INT
+        OUTPUT: INT
+        RESUME: calculate the result of the function
+                y = 2x ^ 3 + x - 5
+    """
     if(isinstance(x, int) is not True):
         raise ValueError
     else:
-        fonction = 2*x**3+x-5
+        fonction = 2 * x ** 3 + x - 5
         int(fonction)
     return fonction
 
 
 def tabuler(fonction, borneInf, borneSup, nbPas):
+    """
+        INPUT : str, int, int, int
+        OUTPUT : Liste
+        RESUME: Calcul les valeurs on se rapproche d'une
+                valeur avc un certain pas
+    """
+
     borneInf = int(borneInf)
     borneSup = int(borneSup)
     nbPas = int(nbPas)
@@ -37,9 +52,9 @@ def tabuler(fonction, borneInf, borneSup, nbPas):
             isinstance(fonction, str) is not True):
         raise ValueError
     elif (borneInf > borneSup):
-        raise borneError
+        raise BorneError
     else:
-        h = int((borneSup - borneInf)/float(nbPas))
+        h = int((borneSup - borneInf) / float(nbPas))
         i = borneInf
         while i <= borneSup:
             y = eval(fonction)(i)
@@ -47,6 +62,7 @@ def tabuler(fonction, borneInf, borneSup, nbPas):
             returnList.append(y)
             i += h
         return returnList
+
 
 def main(line):
     try:
@@ -57,21 +73,21 @@ def main(line):
             borneInf = (var[0])
             borneSup = (var[1])
             nbPas = (var[2])
-            f = var[3].replace("\n","")
+            f = var[3].replace("\n", "")
     except TooMuchArgs:
         print("Bad Input")
     try:
         result = tabuler(f, borneInf, borneSup, nbPas)
         print(result)
     except FonctionError:
-        print("Bad Input")   
+        print("Bad Input")
     except ValueError:
         print("Bad Input")
     except ZeroDivisionError:
         print("Bad Input")
-    except borneError:
+    except BorneError:
         print("Bad Input")
-    
+
 
 
 if __name__ == "__main__":
@@ -80,6 +96,6 @@ if __name__ == "__main__":
         for line in inputFile:
             main(line)
     except IOError:
-            print("FILE NOT FOUND "+sys.argv[1])
+            print("FILE NOT FOUND " + sys.argv[1])
     except IndexError:
             print("BAD USAGE --> USAGE : python3 main.py inputfile")

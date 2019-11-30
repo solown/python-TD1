@@ -7,6 +7,13 @@ class InvalidArgsInput(Exception):
 
 
 def count():
+
+    """
+        INPUT: None
+        OUTPUT: Liste
+        RESUME: Count from 0 to 15 and show only
+                multiple of 3
+    """
     myCountList = []
     for x in range(0, 15, 3):
         myCountList.append(x)

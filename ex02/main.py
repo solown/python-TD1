@@ -16,6 +16,12 @@ class BadTypeinFile(Exception):
 
 
 def squareCalculator(floatNum):
+
+    """
+        INPUT: un float
+        OUTPUT: float arrondi a 8 chiffres après la virgule
+        RESUME: La fonction calcul la racine carée
+    """
     if floatNum.isdigit():
         raise BadTypeinFile
     else:

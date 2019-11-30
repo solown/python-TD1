@@ -8,6 +8,14 @@ class InvalidArgsInput(Exception):
 
 
 def liste_comprehension():
+    """
+        INPUT : NONE
+        OUTPUT : lsite
+        RESUME : affiche  toutes les possibilités
+                 de combinaison entre les
+                 caractère de la chaine 'abc' et
+                 'de'
+    """
     resultat = [i + j for i in "abc" for j in "de"]
     return resultat
 
@@ -36,4 +44,3 @@ if __name__ == "__main__":
         print("FILE NOT FOUND " + sys.argv[1])
     except IndexError:
         print("BAD USAGE --> USAGE : python3 main.py inputfile")
-        

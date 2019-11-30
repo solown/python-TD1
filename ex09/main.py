@@ -8,6 +8,12 @@ class NoInputNeeded(Exception):
 
 
 def fonction_liste():
+    """
+        INPUT: NONE
+        OUTPUT: liste
+        RESUME: Affiche et modifie cetaine la liste
+                choisie
+    """
     liste = [17, 38, 10, 25, 72]
     returnList=[]
     liste.sort()
@@ -35,7 +41,7 @@ def main(line):
         line = line.replace("\n", "")
         if line == "NONE":
             result = fonction_liste()
-            for item in result: 
+            for item in result:
                 print(item)
     except IndexError:
         print("Bad Input")
