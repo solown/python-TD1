@@ -9,47 +9,43 @@ class NoInputNeeded(Exception):
 
 def fonction_liste():
     liste = [17, 38, 10, 25, 72]
+    returnList=[]
     liste.sort()
-    print("Liste triée:\n")
-    print(liste, "\n")
-    liste.append(12)
-    print("Liste avec un ajout de 12:\n")
-    print(liste, "\n")
-    liste.reverse()
-    print("Liste renversée:\n")
-    print(liste, "\n")
-    print("index du nombre 17 de la liste:\n")
-    print(liste.index(17), "\n")
-    liste.remove(38)
-    print("Liste sans 38:\n")
-    print(liste, "\n")
-    print("nombre du deuxième au 3ème élément:\n")
-    print(liste[2:3], "\n")
-    print("affichez la sous-liste du début au 2e élément:\n")
-    print(liste[:2], "\n")
-    print("affichez la sous-liste du 3e élément à la fin de la liste:\n")
-    print(liste[3:], "\n")
-    print("affichez la sous-liste complète de la liste:\n")
-    print(liste[:], "\n")
-    print("affichez le dernier élément en utilisant un indexage négatif.\n")
-    print(liste[-1], "\n")
-    return liste
+    sortedList = liste[:]
+    returnList.append(sortedList)
+    sortedList.append(12)
+    returnList.append(sortedList)
+    reversedList = sortedList[:]
+    reversedList.reverse()
+    returnList.append(reversedList)
+    returnList.append(reversedList.index(17))
+    reducedList = reversedList[:]
+    reducedList.remove(38)
+    returnList.append(reducedList)
+    returnList.append(reducedList[2:3])
+    returnList.append(reducedList[:2])
+    returnList.append(reducedList[3:])
+    returnList.append(reducedList[:])
+    returnList.append(reducedList[-1])
+    return returnList
 
 
-def main():
-
-    result = fonction_liste()
-    if result is None:
-        return
-    else:
-        print(result)
+def main(line):
+    try:
+        line = line.replace("\n", "")
+        if line == "NONE":
+            result = fonction_liste()
+            for item in result: 
+                print(item)
+    except IndexError:
+        print("Bad Input")
 
 if __name__ == "__main__":
     try:
-        if (sys.argv[1] != ""):
-            raise NoInputNeeded
+        inputFile = open(sys.argv[1], "r")
+        for line in  inputFile:
+            main(line)
     except NoInputNeeded:
-        print("you don't have to say anything")
-        result = "BAD INPUT"
+        print("FILE NOT FOUND " + sys.argv[1])
     except IndexError:
-        main()
+        print("BAD USAGE --> USAGE : python3 main.py inputfile")

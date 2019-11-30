@@ -45,15 +45,15 @@ def main(line):
             else:
                 print(result)
     except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
     except ValueError:
-        print("BAD INPUT")
+        print("Bad Input")
     except NegativePressureInput:
-        print("BAD INPUT -> Negative volume")
+        print("Bad Input")
     except NegativeVolumeInput:
-        print("BAD INPUT -> Negative pressure")
+        print("Bad Input")
     except IndexError:
-        print("BAD INPUT -> Two args needed per line")
+        print("Bad Input")
 
 if __name__ == "__main__":
     try:

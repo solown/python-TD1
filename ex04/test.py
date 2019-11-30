@@ -21,8 +21,8 @@ class TestNumberMethods(unittest.TestCase):
             main.pressureChecker("7.6", "-4.8")
 
     def testLowerPressure(self):
-        self.assertEqual(main.pressureChecker("2.6", "5.6")
-                         "Diminuer la pression")
+        self.assertEqual(main.pressureChecker("2.6", "5.6"),
+                         "Augmenter")
 
     def testLowerVolume(self):
         self.assertEqual(main.pressureChecker("2.25", "7.501"),

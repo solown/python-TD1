@@ -66,15 +66,15 @@ def main(line):
         else:
             raise InvalidArgsInput
     except InvalidArgsInput:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
     except ZeroDivisionError:
-        print("BAD INPUT - Zero in a division has been found")
+        print("Bad Input")
     except ValueError:
-        print("BAD INPUT - Float or string detected")
+        print("Bad Input")
     except NegativeInput:
-        print("BAD INPUT - Negative input")
+        print("Bad Input")
     except WrongTrainSpeed:
-        print("BAD INPUT - Check max speed and min speed")
+        print("Bad Input")
 
 
 if __name__ == "__main__":

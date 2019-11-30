@@ -14,15 +14,15 @@ class TestNumberMethods(unittest.TestCase):
 
     def testValueError(self):
         with self.assertRaises(ValueError):
-            main.tabuler("Mafonction", "aaaaa", 6, 2)
+            main.tabuler("maFonction", "aaaaa", 6, 2)
 
     def testZeroDivisionError(self):
         with self.assertRaises(ZeroDivisionError):
-            main.tabuler("Mafonction", 1, 6, 0)
+            main.tabuler("maFonction", 1, 6, 0)
 
     def testborneError(self):
         with self.assertRaises(main.borneError):
-            main.tabuler("Mafonction", 10, 6, 2)
+            main.tabuler("maFonction", 10, 6, 2)
 
 
 if __name__ == "__main__":

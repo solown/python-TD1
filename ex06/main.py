@@ -1,6 +1,6 @@
 import os
 import sys
-import math as m
+from math import pow,pi
 
 
 class NegativeOrNullSquareInput(Exception):
@@ -17,18 +17,21 @@ def cubeCalculator(radius):
     radius = float(radius)
     if radius <= 0.0:
         raise NegativeOrNullSquareInput
-    return m.pow(radius, 3)
+    cubePow = pow(radius, 3)
+    cubePow = round(cubePow,8)
+    return cubePow
 
 
 def volumeSphere(arg1):
     sphereRadius = cubeCalculator(arg1)
-    volume = (m.pi*sphereRadius)/3
+    volume = (pi*sphereRadius)/3
+    volume = round(volume,8)
     return volume
 
 
 def main(line):
     try:
-        if len(line.split(";")) > 1:
+        if len(line.split(";")) != 1:
             raise TooMuchArgs
         else:
             var = line
@@ -38,11 +41,11 @@ def main(line):
             else:
                 print(result)
     except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
     except NegativeOrNullSquareInput:
-        print("BAD INPUT - Negative square in input")
+        print("Bad Input")
     except ValueError:
-        print("BAD INPUT - String has been found")
+        print("Bad Input")
 
 
 if __name__ == "__main__":

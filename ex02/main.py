@@ -24,12 +24,12 @@ def squareCalculator(floatNum):
                 raise NegativeFloatExcept
         else:
             squareFloatNum = m.sqrt(floatNum)
-            return squareFloatNum
+            return round(squareFloatNum,8)
 
 
 def main(line):
     try:
-        if len(line.split(";")) > 1:
+        if len(line.split(";")) != 1:
             raise TooMuchArgs
         else:
             floatNum = line
@@ -39,13 +39,13 @@ def main(line):
             else:
                 print(result)
     except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
     except ValueError:
-        print("BAD INPUT for " + str(floatNum))
+        print("Bad Input")
     except NegativeFloatExcept:
-        print("BAD INPUT for " + str(floatNum))
+        print("Bad Input")
     except BadTypeinFile:
-        print("BAD INPUT for " + str(floatNum))
+        print("Bad Input")
 
 if __name__ == "__main__":
     try:

@@ -25,6 +25,7 @@ class TestNumberMethods(unittest.TestCase):
     def testSquareEquality(self):
         testNumber = "25.7"
         expectedResult = math.sqrt(float(testNumber))
+        expectedResult = round(expectedResult,8)
         self.assertEqual(main.squareCalculator(testNumber), expectedResult)
 
     def testSquareInequality(self):

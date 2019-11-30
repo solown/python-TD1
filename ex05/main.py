@@ -2,27 +2,27 @@ import os
 import sys
 
 
-class TooMuchArgs(Exception):
-    pass
+class InvalidArgsInput(Exception):
+    """Wrong value in input file"""
 
 
 def count():
+    myCountList = []
     for x in range(0, 15, 3):
-        print(x)
-    return ""
+        myCountList.append(x)
+    return myCountList
 
 
 def main(line):
     try:
-        if len(line.split(";")) > 0:
-            raise TooMuchArgs
-        else:
-            var = line
+        line = line.replace("\n", "")
+        if line == "NONE":
             result = count()
-            if result is None:
-                return
-    except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+            print(result)
+        else:
+            raise InvalidArgsInput
+    except InvalidArgsInput:
+        print("Bad Input")
 
 
 if __name__ == "__main__":

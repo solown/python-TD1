@@ -28,7 +28,8 @@ def tabuler(fonction, borneInf, borneSup, nbPas):
     borneInf = int(borneInf)
     borneSup = int(borneSup)
     nbPas = int(nbPas)
-    if (fonction != "Mafonction"):
+    returnList = []
+    if (fonction != "maFonction"):
         raise FonctionError
     elif (isinstance(borneInf, int) is not True or
             isinstance(borneSup, int) is not True or
@@ -42,42 +43,35 @@ def tabuler(fonction, borneInf, borneSup, nbPas):
         i = borneInf
         while i <= borneSup:
             y = eval(fonction)(i)
-            print("x = ", i, "y = ", y)
+            returnList.append(i)
+            returnList.append(y)
             i += h
-        resultat = i
-        return resultat
-
+        return returnList
 
 def main(line):
     try:
-        if len(line.split(";")) > 4:
+        if len(line.split(";")) != 4:
             raise TooMuchArgs
         else:
             var = line.split(";")
             borneInf = (var[0])
             borneSup = (var[1])
             nbPas = (var[2])
-            f = var[3]
-            try:
-                result = tabuler(f, borneInf, borneSup, nbPas)
-            except FonctionError:
-                print("Not the good fonction name her: maFonction and not ", f)
-                result = "BAD INPUT"
-            except ValueError:
-                print("Just a Value error \n")
-                result = "BAD INPUT"
-            except ZeroDivisionError:
-                print("You can't / by 0")
-                result = "BAD INPUT"
-            except borneError:
-                print("The borneInf can't be taller than borneSup")
-                result = "BAD INPUT"
-            if result is None:
-                return
-            else:
-                print(result)
+            f = var[3].replace("\n","")
     except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
+    try:
+        result = tabuler(f, borneInf, borneSup, nbPas)
+        print(result)
+    except FonctionError:
+        print("Bad Input")   
+    except ValueError:
+        print("Bad Input")
+    except ZeroDivisionError:
+        print("Bad Input")
+    except borneError:
+        print("Bad Input")
+    
 
 
 if __name__ == "__main__":
