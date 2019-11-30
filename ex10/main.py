@@ -40,17 +40,13 @@ def main(line):
         else:
             raise InvalidArgsInput
     except InvalidArgsInput:
-        print("BAD INPUT \
-                You didn't respect the needed args for this program")
+        print("Bad Input")
     except UnvalidListException:
-        print("BAD INPUT")
-        print("- Your list doesn't contain only number between 0 and 5")
+        print("Bad Input")
     except TypeError:
-        print("BAD INPUT")
-        print("- Your list may contains str or float instead of integer")
+        print("Bad Input")
     except ValueError:
-        print("BAD INPUT")
-        print("- Your list may contains str or float instead of integer")
+        print("Bad Input")
 
 
 if __name__ == "__main__":

@@ -49,24 +49,25 @@ def main(line):
             line[-1] = line[-1].replace("\n", "")
             var1, var2 = line[0].split(";")
             var3, var4 = line[1].split(";")
-            try:
-                a = Vecteur2D(var1, var2)
-                b = Vecteur2D(var3, var4)
-                c = a.vectorSum(b)
-                print("v1 : " + str(a.getVector()))
-                print("v2 : " + str(b.getVector()))
-                print("somme : " + str(c.getVector()))
-            except InvalidInputType:
-                print ("BAD INPUT -")
-                print("Waiting for a int, got a string or a float")
-            except NegativeInput:
-                print("BAD INPUT - Got negative coords for a vector")
     except InvalidArgsInput:
-        print("BAD INPUT - Incorrect number of  args for this programme")
+        print("Bad Input")
+        return
     except IndexError:
-        print("WTF IS GOING ON")
+        print("Bad Input")
+        return
+    try:
+        a = Vecteur2D(var1, var2)
+        b = Vecteur2D(var3, var4)
+        c = a.vectorSum(b)
+        print("v1 : " + str(a.getVector()))
+        print("v2 : " + str(b.getVector()))
+        print("somme : " + str(c.getVector()))
+    except InvalidInputType:
+        print ("Bad Input")
+    except NegativeInput:
+        print("Bad Input")
     except ValueError:
-        print("Bad input")
+        print("Bad Innput")
 
 
 if __name__ == "__main__":

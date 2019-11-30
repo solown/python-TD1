@@ -11,31 +11,25 @@ def compteMots(chaine):
                 dic[b] += 1
             else:
                 dic[b] = 1
-    else:
+        return dic
+    else :
         raise ValueError
-        dic = null
-    return dic
 
 
 def main(line):
     try:
-        if len(line.split(";")) > 1:
+        if len(line.split(";")) != 1:
             raise TooMuchArgs
         else:
             var = line.replace("\n", "")
-            try:
-                result = compteMots(line)
-                for fin in result:
-                    print (fin, "....", result[fin])
-            except ValueError:
-                print("Not a String in input")
-                result = "BAD INPUT"
-            if result is None:
-                return
-            else:
-                print(result)
     except TooMuchArgs:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input args")
+    try:
+        result = compteMots(line)
+        if result is not None:
+            print(result)
+    except ValueError:
+        print("Bad Input value")
 
 if __name__ == "__main__":
     try:

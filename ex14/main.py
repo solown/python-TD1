@@ -18,7 +18,7 @@ class maClasse():
         self.z = 42
 
     def affiche(self):
-        return(self.x, self.y, self.z)
+        return(self.y, self.z)
 
 
 def main(line):
@@ -27,17 +27,14 @@ def main(line):
         if line == "NONE":
             myObj = maClasse()
             result = myObj.affiche()
-            if result is None:
-                return
-            else:
+            if result is not None:
                 print(result)
-                return
         else:
             raise InvalidArgsInput
     except InvalidArgsInput:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
     except (ValueError, TypeError) as e:
-        print("BAD INPUT - Waiting for integers, got a string")
+        print("Bad Input")
 
 
 if __name__ == "__main__":

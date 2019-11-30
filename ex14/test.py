@@ -16,12 +16,12 @@ class TestNumberMethods(unittest.TestCase):
 
     def testafficheFctnTrue(self):
         instTest = main.maClasse()
-        self.assertEqual(instTest.affiche(), (23, 28, 42))
+        self.assertEqual(instTest.affiche(), (28, 42))
 
 
     def testafficheFctnFalse(self):
         instTest = main.maClasse()
-        self.assertNotEqual(instTest.affiche(), (10, 25, 42))
+        self.assertNotEqual(instTest.affiche(), (25, 42))
 
 
 if __name__ == "__main__":

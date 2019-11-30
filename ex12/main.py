@@ -67,9 +67,9 @@ def main(line):
         else:
             raise InvalidArgsInput
     except InvalidArgsInput:
-        print("BAD INPUT - Too much args for this programme")
+        print("Bad Input")
     except InvalidSetsType:
-        print("BAD INPUT - Invalid type in sets ")
+        print("Bad Input")
 
 if __name__ == "__main__":
     try:

@@ -7,8 +7,6 @@ class NotANumberError(Exception):
 
 
 class Vecteur2D:
-
-
     def __init__(self, x=0, y=0):
         if (x != 0 and y != 0):
             if (x.isdigit() and y.isdigit()):
@@ -23,23 +21,26 @@ class Vecteur2D:
 
 def main(line):
     try:
-        if len(line.split(";")) > 2:
+        if len(line.split(";")) != 2:
             raise TooMuchArgs
         else:
-
+            line = line.replace("\n","")
             line = line.split(";")
             var1 = line[0]
             var2 = line[1]
-            a = Vecteur2D()
-            print(str(a.x) + "," + str(a.y))
-            try:
-                b = Vecteur2D(var1, var2)
-
-                print(str(b.x) + "," + str(b.y))
-            except NotANumberError:
-                print ("BAD INPUT")
     except TooMuchArgs:
-        print("BAD INPUT")
+        print("Bad Input")
+        return
+    try :
+        a = Vecteur2D()
+        coordA = (a.x,a.y)
+        print("par défaut : "+ str(coordA))
+        try:
+            b = Vecteur2D(var1, var2)
+            coordB = (b.x,b.y)
+            print("instance : " + str(coordB))
+        except NotANumberError:
+            print ("Bad Input")
 
 
 if __name__ == "__main__":

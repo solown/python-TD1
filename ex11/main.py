@@ -2,7 +2,7 @@ import os
 import sys
 
 
-class NoInputNeeded(Exception):
+class InvalidArgsInput(Exception):
     """No need input"""
     pass
 
@@ -12,17 +12,28 @@ def liste_comprehension():
     return resultat
 
 
-def main():
-        result = liste_comprehension()
-        print(result)
-
+def main(line):
+    try:
+        line = line.replace("\n", "")
+        if line == "NONE":
+            result = liste_comprehension()
+            print(result)
+        else:
+            raise InvalidArgsInput
+    except InvalidArgsInput:
+        print("Bad Input")
+    except TypeError:
+        print("Bad Input")
+    except ValueError:
+        print("Bad Input")
 
 if __name__ == "__main__":
     try:
-        if (sys.argv[1] != ""):
-            raise NoInputNeeded
-    except NoInputNeeded:
-        print("you don't have to say anything")
-        result = "BAD INPUT"
+        inputFile = open(sys.argv[1], "r")
+        for line in inputFile:
+            main(line)
+    except IOError:
+        print("FILE NOT FOUND " + sys.argv[1])
     except IndexError:
-        main()
+        print("BAD USAGE --> USAGE : python3 main.py inputfile")
+        
