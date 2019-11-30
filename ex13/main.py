@@ -25,12 +25,12 @@ def main(line):
     except TooMuchArgs:
         print("Bad Input args")
     try:
+        int(line)
+        print("Bad Input value")
+    except ValueError:
         result = compteMots(line)
         if result is not None:
             print(result)
-    except ValueError:
-        print("Bad Input value")
-
 if __name__ == "__main__":
     try:
         inputFile = open(sys.argv[1], "r")

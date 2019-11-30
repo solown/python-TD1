@@ -2,6 +2,10 @@ import os
 import sys
 
 
+class TooMuchArgs(Exception):
+    pass
+
+
 class NotANumberError(Exception):
     pass
 
@@ -35,12 +39,11 @@ def main(line):
         a = Vecteur2D()
         coordA = (a.x,a.y)
         print("par défaut : "+ str(coordA))
-        try:
-            b = Vecteur2D(var1, var2)
-            coordB = (b.x,b.y)
-            print("instance : " + str(coordB))
-        except NotANumberError:
-            print ("Bad Input")
+        b = Vecteur2D(var1, var2)
+        coordB = (b.x,b.y)
+        print("instance : " + str(coordB))
+    except NotANumberError:
+        print ("Bad Input")
 
 
 if __name__ == "__main__":
