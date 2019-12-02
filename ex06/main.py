@@ -14,6 +14,12 @@ class TooMuchArgs(Exception):
 
 
 def cubeCalculator(radius):
+    """
+        INPUT :  FLOAT
+        OUTPUT : FLOAT
+        RESUME : Fonction qui prend un nombre flottant et calcule
+        sa puissance au cube
+    """
     radius = float(radius)
     if radius <= 0.0:
         raise NegativeOrNullSquareInput
@@ -23,6 +29,13 @@ def cubeCalculator(radius):
 
 
 def volumeSphere(arg1):
+    """
+        INPUT : FLOAT
+        OUTPOUT : FLOAT
+        RESUME : Utilise la fonction cubeCalculator pour calculer le volume
+                 d'une sphere. Le rayon est donné en entré. Utilisation du 
+                 module math et de la constante pi
+    """
     sphereRadius = cubeCalculator(arg1)
     volume = (pi*sphereRadius)/3
     volume = round(volume,8)

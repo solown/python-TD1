@@ -32,6 +32,13 @@ class WrongTrainSpeed(Exception):
 
 
 def tchacatchac(trainSpeed, dist):
+    """
+        INPUT : INT, INT
+        OUTPUT : STR
+        RESUME : Calcule l'heure à laquelle le M. sera découpé par le train
+                 en fonction de la vitesse (INT1) et de la distance (INT2)
+                 à partir de 9h
+    """
     departureHour = 9
     crashTime = (dist / trainSpeed) * 60
     deathHour = int((crashTime // 60)) + departureHour

@@ -15,6 +15,15 @@ class TooMuchArgs(Exception):
 
 
 def pressureChecker(pressure, volume):
+    """ 
+        INPUT : INT, INT
+        OUTPUT : STRING('OK',KO,'Augmenter','Diminuer')
+        RESUME : Sécurisé une enceinte pressurisé en fonction des seuils
+                 de la pression (pSeuil) et du volume(vSeuil) et afficher
+                 les consignes/l'état de la machine en fonction des 
+                 valeurs pressure et volume en entrée
+    """
+
     pSeuil = 2.3
     vSeuil = 7.41
     pressure = float(pressure)
