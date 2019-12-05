@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex15-main
-"""
-
 class TooMuchArgs(Exception):
     """ Trop d'argument en entrée"""
     pass

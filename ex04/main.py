@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex04-main
-"""
-
 class NegativePressureInput(Exception):
     """Negative pressure is not allowed"""
 

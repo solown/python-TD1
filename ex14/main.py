@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex14-main
-"""
-
 class UndefinedAttributes(Exception):
     """Raise an exception if an attribute in undefined"""
 

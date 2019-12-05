@@ -2,9 +2,6 @@ import os
 import sys
 import math as m
 
-"""
-...module::ex02-main
-"""
 
 class NegativeFloatExcept(Exception):
     """Exception for negative float in input"""

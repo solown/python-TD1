@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex08-main
-"""
-
 """Je suis ligoté sur les rails en gare d’Arras.
 Écrire un programme qui affiche un
 tableau me permettant de connaître l’heure à

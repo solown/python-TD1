@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex11-main
-"""
-
 class InvalidArgsInput(Exception):
     """No need input"""
     pass

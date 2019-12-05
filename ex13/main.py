@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex13-main
-"""
-
 def compteMots(chaine):
     """Compte le nombre de mots dans une chaine
         :param chaine: Chaine de caractère choisi

@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex10-main
-"""
-
 class UnvalidListException(Exception):
     """Exception to throw an error when the list contains items out of [0:]"""
 

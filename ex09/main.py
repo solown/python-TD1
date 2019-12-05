@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex09-main
-"""
-
 class NoInputNeeded(Exception):
     """No need input"""
     pass

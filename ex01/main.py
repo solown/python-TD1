@@ -1,10 +1,6 @@
 import os
 import sys
 
-"""
-...module::ex01-main
-"""
-
 
 class NegativeInput(Exception):
     pass

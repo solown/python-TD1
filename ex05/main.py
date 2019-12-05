@@ -1,9 +1,6 @@
 import os
 import sys
 
-"""
-...module::ex05-main
-"""
 
 class InvalidArgsInput(Exception):
     """Wrong value in input file"""

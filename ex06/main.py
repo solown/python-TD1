@@ -3,10 +3,6 @@ import sys
 from math import pow,pi
 
 
-"""
-...module::ex06-main
-"""
-
 class NegativeOrNullSquareInput(Exception):
     """Negative Volume is not allowed"""
 

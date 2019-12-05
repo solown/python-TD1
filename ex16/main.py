@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex16-main
-"""
-
 class InvalidInputType(Exception):
     """Raise exception when receving a string in input"""
 

@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex12-main
-"""
-
 class InvalidArgsInput(Exception):
     """Raise too much args exception"""
 

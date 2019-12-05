@@ -2,10 +2,6 @@ import os
 import sys
 
 
-"""
-...module::ex03-main
-"""
-
 class NoInputDetected(Exception):
     """no input was detected"""
     pass
