@@ -3,7 +3,7 @@ import sys
 
 
 """
-...module::ex01-main
+...module::ex03-main
 """
 
 class NoInputDetected(Exception):

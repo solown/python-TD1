@@ -4,7 +4,7 @@ from math import pow,pi
 
 
 """
-...module::ex01-main
+...module::ex06-main
 """
 
 class NegativeOrNullSquareInput(Exception):

@@ -2,6 +2,10 @@ import os
 import sys
 
 
+"""
+...module::ex07-main
+"""
+
 class TooMuchArgs(Exception):
     """ You put too much input """
     pass

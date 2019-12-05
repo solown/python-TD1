@@ -3,7 +3,7 @@ import sys
 import math as m
 
 """
-...module::ex01-main
+...module::ex02-main
 """
 
 class NegativeFloatExcept(Exception):

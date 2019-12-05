@@ -3,7 +3,7 @@ import sys
 
 
 """
-...module::ex01-main
+...module::ex13-main
 """
 
 def compteMots(chaine):
