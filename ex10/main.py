@@ -11,14 +11,14 @@ class InvalidArgsInput(Exception):
 
 
 def validateList(myList):
-    """Valide la liste celon l'énnoncé
-        :param myList: Liste entrée
-        :type myList: Liste
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises IOError:Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
-        :return: Soit un true soit un False
-        :rtype: bool
+    """Valide la liste celon l'énnoncé\n
+        :param myList: Liste entrée\n
+        :type myList: Liste\n
+        :raises TooMuchArgs: Trop d'argument en entrée\n
+        :raises IOError:Erreur fichier INPUT pas trouvé\n
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
+        :return: Soit un true soit un False\n
+        :rtype: bool\n
     """
     for item in myList:
         if item < 0 or item > 6:
@@ -27,12 +27,12 @@ def validateList(myList):
 
 
 def listAdding(myList):
-    """Permet d'ajouter ou des éléments dans une liste
-        :param myList: Liste entré
-        :type myList:Liste
-        :return: Retourne la liste après traitement
-        :rtype: Liste
-        :raises UnvalidListException: La liste n'est pas valide
+    """Permet d'ajouter ou des éléments dans une liste\n
+        :param myList: Liste entré\n
+        :type myList:Liste\n
+        :return: Retourne la liste après traitement\n
+        :rtype: Liste\n
+        :raises UnvalidListException: La liste n'est pas valide\n
     """
     myList = list(map(int, myList))
     if validateList(myList) is False:

@@ -3,14 +3,14 @@ import sys
 
 
 def compteMots(chaine):
-    """Compte le nombre de mots dans une chaine
-        :param chaine: Chaine de caractère choisi
-        :type chaine: String
-        :return: un dictionnaire avec le compte de chaques mots
-        :rtype:dictionnaire
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises IOError:Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """Compte le nombre de mots dans une chaine\n
+        :param chaine: Chaine de caractère choisi\n
+        :type chaine: String\n
+        :return: un dictionnaire avec le compte de chaques mots\n
+        :rtype:dictionnaire\n
+        :raises TooMuchArgs: Trop d'argument en entrée\n
+        :raises IOError:Erreur fichier INPUT pas trouvé\n
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     if (type(chaine) is str):
         dic = {}

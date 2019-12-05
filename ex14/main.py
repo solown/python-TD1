@@ -11,12 +11,12 @@ class InvalidArgsInput(Exception):
 
 
 class maClasse():
-    """Class maClasse qui affiche le resultat d'une somme
-        :raises UndefinedAttributes: Attribut pas définis
-        :raises InvalidArgsInput: Argument en entré ne sont aps valide.
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises IOError:Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """Class maClasse qui affiche le resultat d'une somme\n
+        :raises UndefinedAttributes: Attribut pas définis\n
+        :raises InvalidArgsInput: Argument en entré ne sont aps valide.\n
+        :raises IOError:Erreur fichier INPUT pas trouvé\n
+        :raises TooMuchArgs: Trop d'argument en entrée\n
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     x = 23
     y = x + 5
@@ -26,9 +26,9 @@ class maClasse():
         self.z = 42
 
     def affiche(self):
-        """Affiche le resultat de la somme
-            :return:Retourne la somme
-            :rtype:(int,int)
+        """Affiche le resultat de la somme\n
+            :return:Retourne la somme\n
+            :rtype:(int,int)\n
         """
         return(self.y, self.z)
 

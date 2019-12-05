@@ -11,12 +11,12 @@ def liste_comprehension():
     """affiche  toutes les possibilités
              de combinaison entre les
              caractère de la chaine 'abc' et
-             'de'
-        :return: La lsite de toutes les possibilités
-        :rtype: liste
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises IOError:Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+             'de'\n
+        :return: La lsite de toutes les possibilités\n
+        :rtype: liste\n
+        :raises TooMuchArgs: Trop d'argument en entrée\n
+        :raises IOError:Erreur fichier INPUT pas trouvé\n
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     resultat = [i + j for i in "abc" for j in "de"]
     return resultat

@@ -15,19 +15,19 @@ class NegativeInput(Exception):
 
 
 class Vecteur2D:
-    """class Vecteur2D
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises IOError:Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """class Vecteur2D\n
+        :raises TooMuchArgs: Trop d'argument en entrée\n
+        :raises IOError:Erreur fichier INPUT pas trouvé\n
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     def __init__(self, x, y):
-        """constructer de la class Vecteur2D
-            :param x:Coordonnée x d'un vecteur
-            :param y:coordonnée y d'un vecteur
-            :type x:int
-            :type y:int
-            :raises NegativeInput: vous avez entré une vlaeu négative
-            :raises InvalidInputType: ce que vous avez entré n'est pas un int
+        """constructer de la class Vecteur2D\n
+            :param x:Coordonnée x d'un vecteur\n
+            :param y:coordonnée y d'un vecteur\n
+            :type x:int\n
+            :type y:int\n
+            :raises NegativeInput: vous avez entré une vlaeu négative\n
+            :raises InvalidInputType: ce que vous avez entré n'est pas un int\n
 
         """
         if (str(x).isdigit() and str(y).isdigit()):
@@ -40,35 +40,35 @@ class Vecteur2D:
             raise InvalidInputType
 
     def vectorSum(self, vect2):
-        """Faire la somme de deux vecteurs
-            :param vect2 objet Vecteur2D
-            :type vect2: class:'Vecteur2D'
-            :return:la somme de deux vecteur
-            :rtype: class:'Vecteur2D'
+        """Faire la somme de deux vecteurs\n
+            :param vect2 objet Vecteur2D\n
+            :type vect2: class:'Vecteur2D'\n
+            :rtype: class:'Vecteur2D'\n
+            :return:la somme de deux vecteur\n
         """
         xSum = self.x + vect2.x
         ySum = self.y + vect2.y
         return Vecteur2D(xSum, ySum)
 
     def getX(self):
-        """Obtenir la valeur de x d'un objet vecteur 2D
-            :return: la valeur d'un x d'un Vecteur
-            :rtype:int²
+        """Obtenir la valeur de x d'un objet vecteur 2D\n
+            :rtype:int\n
+            :return: la valeur d'un x d'un Vecteur\n
         """
         return self.x
 
     def getY(self):
-        """Obtenir la valeur de y d'un objet vecteur 2D
-            :return: la valeur d'un y d'un vecteur
-            :rtype:int
+        """Obtenir la valeur de y d'un objet vecteur 2D\n
+            :return: la valeur d'un y d'un vecteur\n
+            :rtype:int\n
 
         """
         return self.y
 
     def getVector(self):
-        """Obtenir la valeur d'un objet Vecteur2D
-            :return: coordonnées d'un vecteur
-            :rtype:int,int
+        """Obtenir la valeur d'un objet Vecteur2D\n
+            :return: coordonnées d'un vecteur\n
+            :rtype:int,int\n
         """
         return self.getX(), self.getY()
 

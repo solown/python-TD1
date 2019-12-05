@@ -11,10 +11,10 @@ gare du Nord et Arras). Le tableau prédira
 les différentes heures possibles pour toutes les
 vitesses de 100 km/h à 300 km/h, par pas
 de 10 km/h, les résultats étant arrondis à la
-minute inférieure.
+minute inférieure.\n
 Écrire une procédure tchacatchac qui reçoit la
 vitesse du train et qui affiche l’heure du
-drame.
+drame.\n
 Écrire le programme principal qui affiche le tableau
 demandé."""
 
@@ -34,16 +34,16 @@ class WrongTrainSpeed(Exception):
 def tchacatchac(trainSpeed, dist):
     """Calcule l'heure à laquelle le M. sera découpé par le train
              en fonction de la vitesse (INT1) et de la distance (INT2)
-             à partir de 9h
-        :param trainSpeed: Vitesse du train
-        :type trainSpeed: float
-        :param dist: Distance entre le train et la victime
-        :type dist: int
-        :return: donne l'heure quand le train va percuter la victime
-        :rtype: string
-        :raises NegativeInput: Entrée négative
-        :raises InvalidArgsInput: Mauvais argument entré ligne vide.
-        :raises WrongTrainSpeed:maxSpeed > minSpeed
+             à partir de 9h\n
+        :param trainSpeed: Vitesse du train\n
+        :type trainSpeed: float\n
+        :param dist: Distance entre le train et la victime\n
+        :type dist: int\n
+        :return: donne l'heure quand le train va percuter la victime\n
+        :rtype: string\n
+        :raises NegativeInput: Entrée négative\n
+        :raises InvalidArgsInput: Mauvais argument entré ligne vide.\n
+        :raises WrongTrainSpeed:maxSpeed > minSpeed\n
     """
     departureHour = 9
     crashTime = (dist / trainSpeed) * 60
@@ -56,18 +56,18 @@ def tchacatchac(trainSpeed, dist):
 
 
 def deathHourList(dist, minSpeed, maxSpeed, step):
-    """Calcul l'heure du drame
-            :param dist: Distance entre le train et la victime
-            :type dist: int
-            :param minSpeed: vitesse minimum
-            :type minSpeed: int
-            :param maxSpeed:Vitesse maximale
-            :type maxSpeed: int
-            :param step:fréquence a laquelle on veut avoir l'information
-            :type step: int
-            :raises TooMuchArgs: Trop d'argument en entrée
-            :raises IOError:Erreur fichier INPUT pas trouvé
-            :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """Calcul l'heure du drame\n
+            :param dist: Distance entre le train et la victime\n
+            :type dist: int\n
+            :param minSpeed: vitesse minimum\n
+            :type minSpeed: int\n
+            :param maxSpeed:Vitesse maximale\n
+            :type maxSpeed: int\n
+            :param step:fréquence a laquelle on veut avoir l'information\n
+            :type step: int\n
+            :raises TooMuchArgs: Trop d'argument en entrée\n
+            :raises IOError:Erreur fichier INPUT pas trouvé\n
+            :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     dist, minSpeed = int(dist), int(minSpeed)
     maxSpeed, step = int(maxSpeed), int(step)

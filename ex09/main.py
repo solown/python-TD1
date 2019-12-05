@@ -8,13 +8,13 @@ class NoInputNeeded(Exception):
 
 
 def fonction_liste():
-    """FAit des manipulation sur une liste
-        :return: retourne une liste contenant ces manipulations
-        :rtype: liste
-        :raises NoInputNeeded: Erreur car il y a pas besoin d'entré
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises IOError:Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """FAit des manipulation sur une liste\n
+        :return: retourne une liste contenant ces manipulations\n
+        :rtype: liste\n
+        :raises NoInputNeeded: Erreur car il y a pas besoin d'entré\n
+        :raises TooMuchArgs: Trop d'argument en entrée\n
+        :raises IOError:Erreur fichier INPUT pas trouvé\n
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     liste = [17, 38, 10, 25, 72]
     returnList=[]

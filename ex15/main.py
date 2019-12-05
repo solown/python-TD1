@@ -16,15 +16,15 @@ class Vecteur2D:
     """class Vecteur2D
     """
     def __init__(self, x=0, y=0):
-        """Cosntructeur de la classe
-            :param x: coordonée x du vecteur par defaut à 0
-            :type x: int
-            :param y:cooronnée y du vecteur par defaut à 0
-            :type y:int
-            :raises NotANumberError:Ce n'est pas un int en entrée
-            :raises TooMuchArgs: Trop d'argument en entrée
-            :raises IOError:Erreur fichier INPUT pas trouvé
-            :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+        """Cosntructeur de la classe\n
+            :param x: coordonée x du vecteur par defaut à 0\n
+            :type x: int\n
+            :param y:cooronnée y du vecteur par defaut à 0\n
+            :type y:int\n
+            :raises NotANumberError:Ce n'est pas un int en entrée\n
+            :raises TooMuchArgs: Trop d'argument en entrée\n
+            :raises IOError:Erreur fichier INPUT pas trouvé\n
+            :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
         """
         if (x != 0 and y != 0):
             if (x.isdigit() and y.isdigit()):
