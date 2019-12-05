@@ -2,19 +2,25 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class InvalidArgsInput(Exception):
     """No need input"""
     pass
 
 
 def liste_comprehension():
-    """
-        INPUT : NONE
-        OUTPUT : lsite
-        RESUME : affiche  toutes les possibilités
-                 de combinaison entre les
-                 caractère de la chaine 'abc' et
-                 'de'
+    """affiche  toutes les possibilités
+             de combinaison entre les
+             caractère de la chaine 'abc' et
+             'de'
+        :return: La lsite de toutes les possibilités
+        :rtype: liste
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
     """
     resultat = [i + j for i in "abc" for j in "de"]
     return resultat

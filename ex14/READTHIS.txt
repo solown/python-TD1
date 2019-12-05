@@ -1,3 +1,0 @@
-copier l'ensemble de l'arborescence model_ex et renommez la avec votre exercice
-
-Commencez à coder

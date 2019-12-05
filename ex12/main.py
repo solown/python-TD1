@@ -2,6 +2,10 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class InvalidArgsInput(Exception):
     """Raise too much args exception"""
 
@@ -11,6 +15,20 @@ class InvalidSetsType(Exception):
 
 
 def setsOperation(sets1, sets2):
+    """Exécute les opérations demandées.
+        :param sets1: première liste x
+        :type sets1: liste
+        :param sets2:deuxième liste y
+        :type sets2:liste
+        :return: Les string de chaque opérations
+        :rtype: str
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+        :raises invalidArgsInput:Trop d'argument en entré
+        :raises InvalidSetsType:mauvais type des sets
+
+    """
     setsSub1, setsSub2, setsUnion, setsInter = [], [], [], []
     setsSums = sets1 + sets2
     for item in setsSums:
@@ -47,6 +65,12 @@ def setsOperation(sets1, sets2):
 
 
 def formatOutput(sets):
+    """Met en forme les listes.
+        :param sets:la chaine de caractère
+        :type sets:liste
+        :return:chaine de caractère ayant plus les []
+        :rtype:string
+    """
     setsStr = str(sets).replace("[", "{")
     setsStr = setsStr.replace("]", "}")
     return setsStr

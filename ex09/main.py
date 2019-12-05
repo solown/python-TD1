@@ -2,17 +2,23 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class NoInputNeeded(Exception):
     """No need input"""
     pass
 
 
 def fonction_liste():
-    """
-        INPUT: NONE
-        OUTPUT: liste
-        RESUME: Affiche et modifie cetaine la liste
-                choisie
+    """FAit des manipulation sur une liste
+        :return: retourne une liste contenant ces manipulations
+        :rtype: liste
+        :raises NoInputNeeded: Erreur car il y a pas besoin d'entré
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
     """
     liste = [17, 38, 10, 25, 72]
     returnList=[]

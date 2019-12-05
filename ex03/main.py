@@ -2,6 +2,10 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class NoInputDetected(Exception):
     """no input was detected"""
     pass
@@ -19,11 +23,19 @@ class NotAStringError(Exception):
 
 def comparaison_mot(mot1, mot2):
 
-    """
-        INPUT: 2 String
-        OUTPUT: 1 String
-        RESUME: Show the biggest between the two
-                you put in input
+    """Compare deux mots et retourne le plus grand
+        :param mot1: Permier mot a comparer
+        :type mot1: String
+        :param mot2: Deuxième mot a comparer
+        :type mot2: String
+        :return: retourne le mot le plus grand
+        :rtype:String
+        :raises NotAStringError: Ce qui est rentré n'est pas une string
+        :raises NothingToCompare: Les deux mots sont égaux
+        :raises NoInputDetected: Un des mots n'a pas été rentré
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError: Le fichier INPUT n'a pas été trouvé
+        :raises IndexError: Le fichier INPUT doit être indiqué
     """
     if(mot1 == "" or mot2 == ""):
         raise NoInputDetected

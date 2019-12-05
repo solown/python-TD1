@@ -1,6 +1,10 @@
 import os
 import sys
 
+"""
+...module::ex01-main
+"""
+
 
 class NegativeInput(Exception):
     pass
@@ -8,17 +12,19 @@ class NegativeInput(Exception):
 
 def calcul_vitesse(temps, distance):
 
-    """
-    Fonction qui calcul la vitesse.
-        Demande à l'utilisateur de rentrer:
-        1 float temps
-        1 float distance
-        Puis elle calcul la vitesse
-    Elle affiche la vitesse en float.
-
-    Eception renvoyé:
-        Si division par 0: BAD INPUT
-        Si entrée autre que float: BAD INPUT
+    """Calcul la vitesse
+        :param temps: temps mis pour parcourir la distance
+        :type temps:float
+        :param distance: distance parcourue
+        :type distance: float
+        :return: retourne la vitesse
+        :rtype: float
+        :raises NegativeInput: on entre un nombre négatif
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises ZeroDivisionError: La distance est négative
+        :raises ValueError: Mauvais type
+        :raises IOError: Le fichier INPUT n'a pas été trouvé
+        :raises IndexError: Fichier INPUT pas spécifié
     """
     if (float(temps) == 0):
         raise ZeroDivisionError
@@ -55,7 +61,7 @@ def main(line):
         print("Bad Input")
     except ValueError:
         print("Bad Input")
-    
+
 
 if __name__ == "__main__":
     try:

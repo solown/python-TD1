@@ -2,6 +2,10 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class UnvalidListException(Exception):
     """Exception to throw an error when the list contains items out of [0:]"""
 
@@ -11,6 +15,15 @@ class InvalidArgsInput(Exception):
 
 
 def validateList(myList):
+    """Valide la liste celon l'énnoncé
+        :param myList: Liste entrée
+        :type myList: Liste
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+        :return: Soit un true soit un False
+        :rtype: bool
+    """
     for item in myList:
         if item < 0 or item > 6:
             return False
@@ -18,6 +31,13 @@ def validateList(myList):
 
 
 def listAdding(myList):
+    """Permet d'ajouter ou des éléments dans une liste
+        :param myList: Liste entré
+        :type myList:Liste
+        :return: Retourne la liste après traitement
+        :rtype: Liste
+        :raises UnvalidListException: La liste n'est pas valide
+    """
     myList = list(map(int, myList))
     if validateList(myList) is False:
         raise UnvalidListException

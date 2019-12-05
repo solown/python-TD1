@@ -2,6 +2,9 @@ import os
 import sys
 import math as m
 
+"""
+...module::ex01-main
+"""
 
 class NegativeFloatExcept(Exception):
     """Exception for negative float in input"""
@@ -17,10 +20,16 @@ class BadTypeinFile(Exception):
 
 def squareCalculator(floatNum):
 
-    """
-        INPUT: un float
-        OUTPUT: float arrondi a 8 chiffres après la virgule
-        RESUME: La fonction calcul la racine carée
+    """La fonction calcul la racine carée
+        :param floatNum: Nombre a virgule d'entré
+        :type floatNum: float
+        :return: Nombre a la racine carré arrondi au 8ème
+        :rtype:float
+        :raises NegativeFloatExcept: Nombre rentré négatif
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises BadTypeinFile: Nombre entré n'est pas un nombre
+        :raises IOError:Le fichier INPUT spécifié n'a pas été toruvé
+        :raises IndexError: Pas de fichier INPUT spécifié
     """
     if floatNum.isdigit():
         raise BadTypeinFile

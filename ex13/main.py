@@ -2,11 +2,19 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 def compteMots(chaine):
-    """
-        INPUT : str
-        OUTPUT : dict
-        RESUME : compte le nombre de mots
+    """Compte le nombre de mots dans une chaine
+        :param chaine: Chaine de caractère choisi
+        :type chaine: String
+        :return: un dictionnaire avec le compte de chaques mots
+        :rtype:dictionnaire
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
     """
     if (type(chaine) is str):
         dic = {}

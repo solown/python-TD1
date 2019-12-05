@@ -2,6 +2,10 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class UndefinedAttributes(Exception):
     """Raise an exception if an attribute in undefined"""
 
@@ -11,13 +15,25 @@ class InvalidArgsInput(Exception):
 
 
 class maClasse():
+    """Class maClasse qui affiche le resultat d'une somme
+        :raises UndefinedAttributes: Attribut pas définis
+        :raises InvalidArgsInput: Argument en entré ne sont aps valide.
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """
     x = 23
     y = x + 5
 
     def __init__(self):
+        """Constructeur """
         self.z = 42
 
     def affiche(self):
+        """Affiche le resultat de la somme
+            :return:Retourne la somme
+            :rtype:(int,int)
+        """
         return(self.y, self.z)
 
 

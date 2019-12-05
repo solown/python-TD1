@@ -18,11 +18,12 @@ class FonctionError(Exception):
 
 
 def maFonction(x):
-    """
-        INPUT: INT
-        OUTPUT: INT
-        RESUME: calculate the result of the function
-                y = 2x ^ 3 + x - 5
+    """Calcul le resultat de la fonction y = 2x ^ 3 + x - 5
+        :param x:valeur de x
+        :type x:float
+        :return: retourne f(x)
+        :rtype: float
+
     """
     if(isinstance(x, int) is not True):
         raise ValueError
@@ -33,11 +34,23 @@ def maFonction(x):
 
 
 def tabuler(fonction, borneInf, borneSup, nbPas):
-    """
-        INPUT : str, int, int, int
-        OUTPUT : Liste
-        RESUME: Calcul les valeurs on se rapproche d'une
-                valeur avc un certain pas
+    """Calcul les valeurs on se rapproche d'une valeur avc un certain pas
+        :param fonction: nom de la fonction que l'on veut utiliser
+        :type fonction: string
+        :param borneInf: borne inferieur des recherches
+        :type borneInf: int
+        :param borneSup: borne supérieur des recherches
+        :type borneSup:int
+        :param nbPas:fréquence a laquelle on veut se rapprocher
+        :type nbPas: int
+        :return: Liste des valeurs
+        :rtype:liste
+        :raises ValueError: x n'est pas un int
+        :raises FonctionError: la focntion n'est pas trouvée
+        :raises BorneError: borneInf > borneSup
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
     """
 
     borneInf = int(borneInf)

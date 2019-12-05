@@ -2,6 +2,10 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class InvalidInputType(Exception):
     """Raise exception when receving a string in input"""
 
@@ -15,7 +19,21 @@ class NegativeInput(Exception):
 
 
 class Vecteur2D:
+    """class Vecteur2D
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """
     def __init__(self, x, y):
+        """constructer de la class Vecteur2D
+            :param x:Coordonnée x d'un vecteur
+            :param y:coordonnée y d'un vecteur
+            :type x:int
+            :type y:int
+            :raises NegativeInput: vous avez entré une vlaeu négative
+            :raises InvalidInputType: ce que vous avez entré n'est pas un int
+
+        """
         if (str(x).isdigit() and str(y).isdigit()):
             if(int(x) >= 0 and int(y) >= 0):
                 self.x = int(x)
@@ -26,17 +44,36 @@ class Vecteur2D:
             raise InvalidInputType
 
     def vectorSum(self, vect2):
+        """Faire la somme de deux vecteurs
+            :param vect2 objet Vecteur2D
+            :type vect2: class:'Vecteur2D'
+            :return:la somme de deux vecteur
+            :rtype: class:'Vecteur2D'
+        """
         xSum = self.x + vect2.x
         ySum = self.y + vect2.y
         return Vecteur2D(xSum, ySum)
 
     def getX(self):
+        """Obtenir la valeur de x d'un objet vecteur 2D
+            :return: la valeur d'un x d'un Vecteur
+            :rtype:int²
+        """
         return self.x
 
     def getY(self):
+        """Obtenir la valeur de y d'un objet vecteur 2D
+            :return: la valeur d'un y d'un vecteur
+            :rtype:int
+
+        """
         return self.y
 
     def getVector(self):
+        """Obtenir la valeur d'un objet Vecteur2D
+            :return: coordonnées d'un vecteur
+            :rtype:int,int
+        """
         return self.getX(), self.getY()
 
 

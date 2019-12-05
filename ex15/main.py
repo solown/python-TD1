@@ -2,6 +2,10 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class TooMuchArgs(Exception):
     """ Trop d'argument en entrée"""
     pass
@@ -13,18 +17,19 @@ class NotANumberError(Exception):
 
 
 class Vecteur2D:
-    """
-        class Vecteur:
-
-            __init__:
-                INPUT : int or None
-                OUTPUT : an object of the class
-                         Vecteur 2D
-                RESUME: contructeur de la classe
-                        Avec comme valeur par
-                        defaut: (self,0,0)    
+    """class Vecteur2D
     """
     def __init__(self, x=0, y=0):
+        """Cosntructeur de la classe
+            :param x: coordonée x du vecteur par defaut à 0
+            :type x: int
+            :param y:cooronnée y du vecteur par defaut à 0
+            :type y:int
+            :raises NotANumberError:Ce n'est pas un int en entrée
+            :raises TooMuchArgs: Trop d'argument en entrée
+            :raises IOError:Erreur fichier INPUT pas trouvé
+            :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+        """
         if (x != 0 and y != 0):
             if (x.isdigit() and y.isdigit()):
                 self.x = x

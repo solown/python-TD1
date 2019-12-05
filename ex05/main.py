@@ -1,6 +1,9 @@
 import os
 import sys
 
+"""
+...module::ex01-main
+"""
 
 class InvalidArgsInput(Exception):
     """Wrong value in input file"""
@@ -8,11 +11,13 @@ class InvalidArgsInput(Exception):
 
 def count():
 
-    """
-        INPUT: None
-        OUTPUT: Liste
-        RESUME: Count from 0 to 15 and show only
-                multiple of 3
+    """Count from 0 to 15 and show only multiple of 3
+        :return: la liste
+        :rtype: Liste
+        :raises InvalidArgsInput: Pas de ligne dans le fichier INPUT
+        :raises IOError: Le fichier INPUT n'a pas été trouvé
+        :raises IndexError: Besoin de spécifié un fichier INPUT
+
     """
     myCountList = []
     for x in range(0, 15, 3):

@@ -2,6 +2,10 @@ import os
 import sys
 
 
+"""
+...module::ex01-main
+"""
+
 class NegativePressureInput(Exception):
     """Negative pressure is not allowed"""
 
@@ -15,13 +19,22 @@ class TooMuchArgs(Exception):
 
 
 def pressureChecker(pressure, volume):
-    """ 
-        INPUT : INT, INT
-        OUTPUT : STRING('OK',KO,'Augmenter','Diminuer')
-        RESUME : Sécurisé une enceinte pressurisé en fonction des seuils
-                 de la pression (pSeuil) et du volume(vSeuil) et afficher
-                 les consignes/l'état de la machine en fonction des 
-                 valeurs pressure et volume en entrée
+    """ Vérifie la pression Sécurisé une enceinte pressurisé
+        en fonction des seuils de la pression (pSeuil) et du volume(vSeuil)
+        et afficher les consignes/l'état de la machine en fonction des valeurs
+        pressure et volume en entrée
+        :param pressure:la pression présente
+        :type pressure:float
+        :param volume:volume que de l'enceinte que nous voulons vérifier
+        :type volume:float
+        :return: KO,Augmenter,Diminuer,OK (celon s'il ya  trop de pression)
+        :rtype: String
+        :raises NegativeVolumeInput: Le volume entré est négatif
+        :raises NegativePressureInput: La pression entrée est négative
+        :raises TooMuchArgs: Trop d'argument en entrée
+        :raises IOError: Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT pas spécifié
+
     """
 
     pSeuil = 2.3

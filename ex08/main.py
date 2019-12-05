@@ -32,12 +32,18 @@ class WrongTrainSpeed(Exception):
 
 
 def tchacatchac(trainSpeed, dist):
-    """
-        INPUT : INT, INT
-        OUTPUT : STR
-        RESUME : Calcule l'heure à laquelle le M. sera découpé par le train
-                 en fonction de la vitesse (INT1) et de la distance (INT2)
-                 à partir de 9h
+    """Calcule l'heure à laquelle le M. sera découpé par le train
+             en fonction de la vitesse (INT1) et de la distance (INT2)
+             à partir de 9h
+        :param trainSpeed: Vitesse du train
+        :type trainSpeed: float
+        :param dist: Distance entre le train et la victime
+        :type dist: int
+        :return: donne l'heure quand le train va percuter la victime
+        :rtype: string
+        :raises NegativeInput: Entrée négative
+        :raises InvalidArgsInput: Mauvais argument entré ligne vide.
+        :raises WrongTrainSpeed:maxSpeed > minSpeed
     """
     departureHour = 9
     crashTime = (dist / trainSpeed) * 60
@@ -50,6 +56,19 @@ def tchacatchac(trainSpeed, dist):
 
 
 def deathHourList(dist, minSpeed, maxSpeed, step):
+    """Calcul l'heure du drame
+            :param dist: Distance entre le train et la victime
+            :type dist: int
+            :param minSpeed: vitesse minimum
+            :type minSpeed: int
+            :param maxSpeed:Vitesse maximale
+            :type maxSpeed: int
+            :param step:fréquence a laquelle on veut avoir l'information
+            :type step: int
+            :raises TooMuchArgs: Trop d'argument en entrée
+            :raises IOError:Erreur fichier INPUT pas trouvé
+            :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """
     dist, minSpeed = int(dist), int(minSpeed)
     maxSpeed, step = int(maxSpeed), int(step)
     if dist < 0 or minSpeed < 0 or maxSpeed < 0 or step < 0:

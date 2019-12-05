@@ -3,6 +3,10 @@ import sys
 from math import pow,pi
 
 
+"""
+...module::ex01-main
+"""
+
 class NegativeOrNullSquareInput(Exception):
     """Negative Volume is not allowed"""
 
@@ -14,11 +18,15 @@ class TooMuchArgs(Exception):
 
 
 def cubeCalculator(radius):
-    """
-        INPUT :  FLOAT
-        OUTPUT : FLOAT
-        RESUME : Fonction qui prend un nombre flottant et calcule
-        sa puissance au cube
+    """Fonction qui prend un nombre flottant et calcule sa puissance au cube
+        :param radius: un nombre
+        :type radius: float
+        :return: le cube du nombre
+        :rtype: float
+        :raises NegativeOrNullSquareInput: Volume négatif
+        :raises TooMuchArgs: Trop d'élément en enrtée
+        :raises IOError:Erreur fichier INPUT pas trouvé
+        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
     """
     radius = float(radius)
     if radius <= 0.0:
@@ -29,12 +37,13 @@ def cubeCalculator(radius):
 
 
 def volumeSphere(arg1):
-    """
-        INPUT : FLOAT
-        OUTPOUT : FLOAT
-        RESUME : Utilise la fonction cubeCalculator pour calculer le volume
-                 d'une sphere. Le rayon est donné en entré. Utilisation du 
-                 module math et de la constante pi
+    """Utilise la fonction cubeCalculator pour calculer le volume
+             d'une sphere. Le rayon est donné en entré. Utilisation du
+             module math et de la constante pi
+        :param arg1:rayon de la sphère
+        :type arg1:float
+        :return:retourne le volume
+        :rtype:float
     """
     sphereRadius = cubeCalculator(arg1)
     volume = (pi*sphereRadius)/3
