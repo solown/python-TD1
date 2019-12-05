@@ -16,9 +16,6 @@ class NegativeInput(Exception):
 
 class Vecteur2D:
     """class Vecteur2D\n
-        :raises TooMuchArgs: Trop d'argument en entrée\n
-        :raises IOError:Erreur fichier INPUT pas trouvé\n
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     def __init__(self, x, y):
         """constructer de la class Vecteur2D\n

@@ -8,9 +8,6 @@ def compteMots(chaine):
         :type chaine: String\n
         :return: un dictionnaire avec le compte de chaques mots\n
         :rtype:dictionnaire\n
-        :raises TooMuchArgs: Trop d'argument en entrée\n
-        :raises IOError:Erreur fichier INPUT pas trouvé\n
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     if (type(chaine) is str):
         dic = {}

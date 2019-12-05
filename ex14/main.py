@@ -14,9 +14,6 @@ class maClasse():
     """Class maClasse qui affiche le resultat d'une somme\n
         :raises UndefinedAttributes: Attribut pas définis\n
         :raises InvalidArgsInput: Argument en entré ne sont aps valide.\n
-        :raises IOError:Erreur fichier INPUT pas trouvé\n
-        :raises TooMuchArgs: Trop d'argument en entrée\n
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     x = 23
     y = x + 5

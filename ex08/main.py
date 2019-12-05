@@ -65,9 +65,6 @@ def deathHourList(dist, minSpeed, maxSpeed, step):
             :type maxSpeed: int\n
             :param step:fréquence a laquelle on veut avoir l'information\n
             :type step: int\n
-            :raises TooMuchArgs: Trop d'argument en entrée\n
-            :raises IOError:Erreur fichier INPUT pas trouvé\n
-            :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     dist, minSpeed = int(dist), int(minSpeed)
     maxSpeed, step = int(maxSpeed), int(step)

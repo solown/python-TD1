@@ -14,9 +14,6 @@ def liste_comprehension():
              'de'\n
         :return: La lsite de toutes les possibilités\n
         :rtype: liste\n
-        :raises TooMuchArgs: Trop d'argument en entrée\n
-        :raises IOError:Erreur fichier INPUT pas trouvé\n
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
     """
     resultat = [i + j for i in "abc" for j in "de"]
     return resultat

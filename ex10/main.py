@@ -14,9 +14,6 @@ def validateList(myList):
     """Valide la liste celon l'énnoncé\n
         :param myList: Liste entrée\n
         :type myList: Liste\n
-        :raises TooMuchArgs: Trop d'argument en entrée\n
-        :raises IOError:Erreur fichier INPUT pas trouvé\n
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
         :return: Soit un true soit un False\n
         :rtype: bool\n
     """

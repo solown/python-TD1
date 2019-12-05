@@ -18,9 +18,6 @@ def setsOperation(sets1, sets2):
         :type sets2:liste\n
         :return: Les string de chaque opérations\n
         :rtype: str\n
-        :raises TooMuchArgs: Trop d'argument en entrée\n
-        :raises IOError:Erreur fichier INPUT pas trouvé\n
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel\n
         :raises invalidArgsInput:Trop d'argument en entré\n
         :raises InvalidSetsType:mauvais type des sets\n
 
