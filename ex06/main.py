@@ -14,15 +14,12 @@ class TooMuchArgs(Exception):
 
 
 def cubeCalculator(radius):
-    """Fonction qui prend un nombre flottant et calcule sa puissance au cube
-        :param radius: un nombre
-        :type radius: float
-        :return: le cube du nombre
-        :rtype: float
+    """Fonction qui prend un nombre flottant et calcule sa puissance au cube \n
+        :param radius: un nombre \n
+        :type radius: float \n
+        :return: le cube du nombre \n
+        :rtype: float \n
         :raises NegativeOrNullSquareInput: Volume négatif
-        :raises TooMuchArgs: Trop d'élément en enrtée
-        :raises IOError:Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
     """
     radius = float(radius)
     if radius <= 0.0:
@@ -33,12 +30,12 @@ def cubeCalculator(radius):
 
 
 def volumeSphere(arg1):
-    """Utilise la fonction cubeCalculator pour calculer le volume
+    """Utilise la fonction cubeCalculator pour calculer le volume \n
              d'une sphere. Le rayon est donné en entré. Utilisation du
-             module math et de la constante pi
-        :param arg1:rayon de la sphère
-        :type arg1:float
-        :return:retourne le volume
+             module math et de la constante pi \n
+        :param arg1:rayon de la sphère \n
+        :type arg1:float \n
+        :return:retourne le volume \n
         :rtype:float
     """
     sphereRadius = cubeCalculator(arg1)

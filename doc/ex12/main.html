@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.2" />
+<title>python-TD1.ex12.main API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>python-TD1.ex12.main</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import sys
+
+
+class InvalidArgsInput(Exception):
+    &#34;&#34;&#34;Raise too much args exception&#34;&#34;&#34;
+
+
+class InvalidSetsType(Exception):
+    &#34;&#34;&#34;Is raise when there is an wrong type in a sets&#34;&#34;&#34;
+
+
+def setsOperation(sets1, sets2):
+    &#34;&#34;&#34;Exécute les opérations demandées.\n
+        :param sets1: première liste x\n
+        :type sets1: liste\n
+        :param sets2:deuxième liste y\n
+        :type sets2:liste\n
+        :return: Les string de chaque opérations\n
+        :rtype: str\n
+        :raises invalidArgsInput:Trop d&#39;argument en entré\n
+        :raises InvalidSetsType:mauvais type des sets\n
+
+    &#34;&#34;&#34;
+    setsSub1, setsSub2, setsUnion, setsInter = [], [], [], []
+    setsSums = sets1 + sets2
+    for item in setsSums:
+        if type(item) is not str or len(item) &gt; 1:
+            raise InvalidSetsType
+    if &#34;c&#34; in sets1:
+        out1 = &#34;True&#34;
+    else:
+        out1 = &#34;False&#34;
+    if &#34;a&#34; in sets2:
+        out2 = &#34;True&#34;
+    else:
+        out2 = &#34;False&#34;
+    for item in setsSums:
+        if item in sets1 and item not in sets2:
+            setsSub1.append(item)
+        if item in sets2 and item not in sets1:
+            setsSub2.append(item)
+        if item in sets1 and item in sets2:
+            setsUnion.append(item)
+        if ((item in sets1 and item not in sets2) or
+                (item in sets2 and item not in sets1)):
+            setsInter.append(item)
+    sets1Str = &#34;X : &#34;+formatOutput(sets1)
+    sets2Str = &#34;Y : &#34;+formatOutput(sets2)
+    out1Str = &#34;c in X : &#34; + str(out1)
+    out2Str = &#34;a in Y : &#34; + str(out2)
+    setsSub1Str = &#34;X - Y : &#34; + formatOutput(setsSub1)
+    setsSub2Str = &#34;Y - X : &#34; + formatOutput(setsSub2)
+    setsUnionStr = &#34;X union Y : &#34; + formatOutput(setsUnion)
+    setsInterStr = &#34;X inter Y : &#34; + formatOutput(setsInter)
+    return (out1Str, out2Str, setsSub1Str, setsSub2Str,
+            setsUnionStr, setsInterStr)
+
+
+def formatOutput(sets):
+    &#34;&#34;&#34;Met en forme les listes.\n
+        :param sets:la chaine de caractère\n
+        :type sets:liste\n
+        :return:chaine de caractère ayant plus les []\n
+        :rtype:string\n
+    &#34;&#34;&#34;
+    setsStr = str(sets).replace(&#34;[&#34;, &#34;{&#34;)
+    setsStr = setsStr.replace(&#34;]&#34;, &#34;}&#34;)
+    return setsStr
+
+
+def main(line):
+    try:
+        line = line.replace(&#34;\n&#34;, &#34;&#34;)
+        if line == &#34;NONE&#34;:
+            setsX = [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;]
+            setsY = [&#34;s&#34;, &#34;b&#34;, &#34;d&#34;]
+            result = setsOperation(setsX, setsY)
+            if result is None:
+                return
+            else:
+                for item in result:
+                    print(item)
+        else:
+            raise InvalidArgsInput
+    except InvalidArgsInput:
+        print(&#34;Bad Input&#34;)
+    except InvalidSetsType:
+        print(&#34;Bad Input&#34;)
+
+if __name__ == &#34;__main__&#34;:
+    try:
+        inputFile = open(sys.argv[1], &#34;r&#34;)
+        for line in inputFile:
+            main(line)
+    except IOError:
+            print(&#34;FILE NOT FOUND &#34; + sys.argv[1])
+    except IndexError:
+            print(&#34;BAD USAGE --&gt; USAGE : python3 main.py inputfile&#34;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="python-TD1.ex12.main.formatOutput"><code class="name flex">
+<span>def <span class="ident">formatOutput</span></span>(<span>sets)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Met en forme les listes.</p>
+<p>:param sets:la chaine de caractère</p>
+<p>:type sets:liste</p>
+<p>:return:chaine de caractère ayant plus les []</p>
+<p>:rtype:string</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def formatOutput(sets):
+    &#34;&#34;&#34;Met en forme les listes.\n
+        :param sets:la chaine de caractère\n
+        :type sets:liste\n
+        :return:chaine de caractère ayant plus les []\n
+        :rtype:string\n
+    &#34;&#34;&#34;
+    setsStr = str(sets).replace(&#34;[&#34;, &#34;{&#34;)
+    setsStr = setsStr.replace(&#34;]&#34;, &#34;}&#34;)
+    return setsStr</code></pre>
+</details>
+</dd>
+<dt id="python-TD1.ex12.main.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>line)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main(line):
+    try:
+        line = line.replace(&#34;\n&#34;, &#34;&#34;)
+        if line == &#34;NONE&#34;:
+            setsX = [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;]
+            setsY = [&#34;s&#34;, &#34;b&#34;, &#34;d&#34;]
+            result = setsOperation(setsX, setsY)
+            if result is None:
+                return
+            else:
+                for item in result:
+                    print(item)
+        else:
+            raise InvalidArgsInput
+    except InvalidArgsInput:
+        print(&#34;Bad Input&#34;)
+    except InvalidSetsType:
+        print(&#34;Bad Input&#34;)</code></pre>
+</details>
+</dd>
+<dt id="python-TD1.ex12.main.setsOperation"><code class="name flex">
+<span>def <span class="ident">setsOperation</span></span>(<span>sets1, sets2)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Exécute les opérations demandées.</p>
+<p>:param sets1: première liste x</p>
+<p>:type sets1: liste</p>
+<p>:param sets2:deuxième liste y</p>
+<p>:type sets2:liste</p>
+<p>:return: Les string de chaque opérations</p>
+<p>:rtype: str</p>
+<p>:raises invalidArgsInput:Trop d'argument en entré</p>
+<p>:raises InvalidSetsType:mauvais type des sets</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setsOperation(sets1, sets2):
+    &#34;&#34;&#34;Exécute les opérations demandées.\n
+        :param sets1: première liste x\n
+        :type sets1: liste\n
+        :param sets2:deuxième liste y\n
+        :type sets2:liste\n
+        :return: Les string de chaque opérations\n
+        :rtype: str\n
+        :raises invalidArgsInput:Trop d&#39;argument en entré\n
+        :raises InvalidSetsType:mauvais type des sets\n
+
+    &#34;&#34;&#34;
+    setsSub1, setsSub2, setsUnion, setsInter = [], [], [], []
+    setsSums = sets1 + sets2
+    for item in setsSums:
+        if type(item) is not str or len(item) &gt; 1:
+            raise InvalidSetsType
+    if &#34;c&#34; in sets1:
+        out1 = &#34;True&#34;
+    else:
+        out1 = &#34;False&#34;
+    if &#34;a&#34; in sets2:
+        out2 = &#34;True&#34;
+    else:
+        out2 = &#34;False&#34;
+    for item in setsSums:
+        if item in sets1 and item not in sets2:
+            setsSub1.append(item)
+        if item in sets2 and item not in sets1:
+            setsSub2.append(item)
+        if item in sets1 and item in sets2:
+            setsUnion.append(item)
+        if ((item in sets1 and item not in sets2) or
+                (item in sets2 and item not in sets1)):
+            setsInter.append(item)
+    sets1Str = &#34;X : &#34;+formatOutput(sets1)
+    sets2Str = &#34;Y : &#34;+formatOutput(sets2)
+    out1Str = &#34;c in X : &#34; + str(out1)
+    out2Str = &#34;a in Y : &#34; + str(out2)
+    setsSub1Str = &#34;X - Y : &#34; + formatOutput(setsSub1)
+    setsSub2Str = &#34;Y - X : &#34; + formatOutput(setsSub2)
+    setsUnionStr = &#34;X union Y : &#34; + formatOutput(setsUnion)
+    setsInterStr = &#34;X inter Y : &#34; + formatOutput(setsInter)
+    return (out1Str, out2Str, setsSub1Str, setsSub2Str,
+            setsUnionStr, setsInterStr)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="python-TD1.ex12.main.InvalidArgsInput"><code class="flex name class">
+<span>class <span class="ident">InvalidArgsInput</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Raise too much args exception</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InvalidArgsInput(Exception):
+    &#34;&#34;&#34;Raise too much args exception&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="python-TD1.ex12.main.InvalidSetsType"><code class="flex name class">
+<span>class <span class="ident">InvalidSetsType</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Is raise when there is an wrong type in a sets</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InvalidSetsType(Exception):
+    &#34;&#34;&#34;Is raise when there is an wrong type in a sets&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="python-TD1.ex12" href="index.html">python-TD1.ex12</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="python-TD1.ex12.main.formatOutput" href="#python-TD1.ex12.main.formatOutput">formatOutput</a></code></li>
+<li><code><a title="python-TD1.ex12.main.main" href="#python-TD1.ex12.main.main">main</a></code></li>
+<li><code><a title="python-TD1.ex12.main.setsOperation" href="#python-TD1.ex12.main.setsOperation">setsOperation</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="python-TD1.ex12.main.InvalidArgsInput" href="#python-TD1.ex12.main.InvalidArgsInput">InvalidArgsInput</a></code></h4>
+</li>
+<li>
+<h4><code><a title="python-TD1.ex12.main.InvalidSetsType" href="#python-TD1.ex12.main.InvalidSetsType">InvalidSetsType</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.2</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

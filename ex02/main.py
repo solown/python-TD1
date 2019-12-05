@@ -17,16 +17,13 @@ class BadTypeinFile(Exception):
 
 def squareCalculator(floatNum):
 
-    """La fonction calcul la racine carée
-        :param floatNum: Nombre a virgule d'entré
-        :type floatNum: float
-        :return: Nombre a la racine carré arrondi au 8ème
-        :rtype:float
-        :raises NegativeFloatExcept: Nombre rentré négatif
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises BadTypeinFile: Nombre entré n'est pas un nombre
-        :raises IOError:Le fichier INPUT spécifié n'a pas été toruvé
-        :raises IndexError: Pas de fichier INPUT spécifié
+    """La fonction calcul la racine carée \n
+        :param floatNum: Nombre a virgule d'entré \n
+        :type floatNum: float \n
+        :return: Nombre a la racine carré arrondi au 8ème \n
+        :rtype:float \n
+        :raises NegativeFloatExcept: Nombre rentré négatif \n
+        :raises BadTypeinFile: Nombre entré n'est pas un nombre \n 
     """
     if floatNum.isdigit():
         raise BadTypeinFile

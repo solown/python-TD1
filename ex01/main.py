@@ -8,19 +8,16 @@ class NegativeInput(Exception):
 
 def calcul_vitesse(temps, distance):
 
-    """Calcul la vitesse
-        :param temps: temps mis pour parcourir la distance
-        :type temps:float
-        :param distance: distance parcourue
-        :type distance: float
-        :return: retourne la vitesse
-        :rtype: float
-        :raises NegativeInput: on entre un nombre négatif
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises ZeroDivisionError: La distance est négative
-        :raises ValueError: Mauvais type
-        :raises IOError: Le fichier INPUT n'a pas été trouvé
-        :raises IndexError: Fichier INPUT pas spécifié
+    """Calcul la vitesse \n
+        :param temps: temps mis pour parcourir la distance \n
+        :type temps:float \n 
+        :param distance: distance parcourue \n
+        :type distance: float \n
+        :return: retourne la vitesse \n
+        :rtype: float \n
+        :raises NegativeInput: on entre un nombre négatif \n
+        :raises ZeroDivisionError: La distance est négative \n
+        :raises ValueError: Mauvais type \n
     """
     if (float(temps) == 0):
         raise ZeroDivisionError

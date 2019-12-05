@@ -8,12 +8,10 @@ class InvalidArgsInput(Exception):
 
 def count():
 
-    """Count from 0 to 15 and show only multiple of 3
-        :return: la liste
-        :rtype: Liste
-        :raises InvalidArgsInput: Pas de ligne dans le fichier INPUT
-        :raises IOError: Le fichier INPUT n'a pas été trouvé
-        :raises IndexError: Besoin de spécifié un fichier INPUT
+    """Count from 0 to 15 and show only multiple of 3 \n
+        :return: la liste \n
+        :rtype: Liste \n
+        :raises InvalidArgsInput: Pas de ligne dans le fichier INPUT \n
 
     """
     myCountList = []

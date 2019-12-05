@@ -18,18 +18,15 @@ def pressureChecker(pressure, volume):
     """ Vérifie la pression Sécurisé une enceinte pressurisé
         en fonction des seuils de la pression (pSeuil) et du volume(vSeuil)
         et afficher les consignes/l'état de la machine en fonction des valeurs
-        pressure et volume en entrée
-        :param pressure:la pression présente
-        :type pressure:float
-        :param volume:volume que de l'enceinte que nous voulons vérifier
-        :type volume:float
-        :return: KO,Augmenter,Diminuer,OK (celon s'il ya  trop de pression)
-        :rtype: String
-        :raises NegativeVolumeInput: Le volume entré est négatif
-        :raises NegativePressureInput: La pression entrée est négative
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises IOError: Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT pas spécifié
+        pressure et volume en entrée \n
+        :param pressure:la pression présente \n
+        :type pressure:float \n
+        :param volume:volume que de l'enceinte que nous voulons vérifier \n
+        :type volume:float \n
+        :return: KO,Augmenter,Diminuer,OK (celon s'il ya  trop de pression) \n
+        :rtype: String \n
+        :raises NegativeVolumeInput: Le volume entré est négatif \n
+        :raises NegativePressureInput: La pression entrée est négative \n
 
     """
 

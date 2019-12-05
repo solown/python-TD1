@@ -34,23 +34,20 @@ def maFonction(x):
 
 
 def tabuler(fonction, borneInf, borneSup, nbPas):
-    """Calcul les valeurs on se rapproche d'une valeur avc un certain pas
-        :param fonction: nom de la fonction que l'on veut utiliser
-        :type fonction: string
-        :param borneInf: borne inferieur des recherches
-        :type borneInf: int
-        :param borneSup: borne supérieur des recherches
-        :type borneSup:int
-        :param nbPas:fréquence a laquelle on veut se rapprocher
-        :type nbPas: int
-        :return: Liste des valeurs
-        :rtype:liste
-        :raises ValueError: x n'est pas un int
-        :raises FonctionError: la focntion n'est pas trouvée
-        :raises BorneError: borneInf > borneSup
-        :raises TooMuchArgs: Trop d'argument en entrée
-        :raises IOError:Erreur fichier INPUT pas trouvé
-        :raises IndexError: Erreur fichier INPUT demandé dans l'appel
+    """Calcul les valeurs on se rapproche d'une valeur avc un certain pas \n
+        :param fonction: nom de la fonction que l'on veut utiliser \n
+        :type fonction: string \n
+        :param borneInf: borne inferieur des recherches \n
+        :type borneInf: int \n 
+        :param borneSup: borne supérieur des recherches \n
+        :type borneSup:int \n
+        :param nbPas:fréquence a laquelle on veut se rapprocher \n
+        :type nbPas: int \n
+        :return: Liste des valeurs \n
+        :rtype:liste \n
+        :raises ValueError: x n'est pas un int \n
+        :raises FonctionError: la focntion n'est pas trouvée \n
+        :raises BorneError: borneInf > borneSup \n
     """
 
     borneInf = int(borneInf)
